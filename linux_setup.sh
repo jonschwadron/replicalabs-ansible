@@ -7,7 +7,7 @@ mkdir $SETUP_DIR
 # Get apt-add-repository
 sudo apt-get install -y software-properties-common python-software-properties
 
-PACKAGES="cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client libeigen3-dev cppcheck glew-utils libglew-dev libzmq-dev libzmq1"
+PACKAGES="cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client libeigen3-dev cppcheck glew-utils libglew-dev libzmq-dev libzmq1 libxi-dev libxmu-dev"
 
 sudo apt-add-repository -y ppa:git-core/ppa
 sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
@@ -42,6 +42,15 @@ mkdir cmake-2.8.12/build
 cd cmake-2.8.12/build
 cmake ..
 make
+make install
+
+# Updated Eigen
+wget http://bitbucket.org/eigen/eigen/get/3.2.0.tar.gz
+tar -xzf 3.2.0.tar.gz
+cd eigen-eigen-ffa86ffb5570/
+mkdir build
+cd build
+cmake ..
 make install
 
 # zmq.hpp
