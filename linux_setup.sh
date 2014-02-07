@@ -68,7 +68,7 @@ make install
 # Our code
 cd
 if [ ! -d rslam ]; then
-    git clone --recursive rpg@robotics.gwu.edu:git/rslam
+    git clone --recursive https://github.com/gwu-robotics/rslam.git
 else
     cd rslam
     git pull origin master
