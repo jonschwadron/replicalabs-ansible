@@ -7,7 +7,7 @@ mkdir $SETUP_DIR
 # Get apt-add-repository
 sudo apt-get install -y software-properties-common python-software-properties
 
-PACKAGES="cmake git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.7 gcc-4.7 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client libeigen3-dev cppcheck glew-utils libglew-dev libzmq-dev libzmq1"
+PACKAGES="cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client libeigen3-dev cppcheck glew-utils libglew-dev libzmq-dev libzmq1"
 
 sudo apt-add-repository -y ppa:git-core/ppa
 sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
@@ -31,9 +31,9 @@ ssh-copy-id rpg@robotics.gwu.edu
 # Install custom built rpg dependencies
 sudo chmod -R 777 /usr/local;
 
-# Make GCC 4.7 the default
-sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-4.7 50
-sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-4.7 50
+# Make GCC 4.8 the default
+sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-4.8 50
+sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-4.8 50
 
 # Update CMake
 wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
