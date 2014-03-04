@@ -81,6 +81,20 @@ cmake .. -DENABLE_PRECOMPILED_HEADERS=OFF
 make
 make install
 
+cd $SETUP_DIR
+if [ ! -d cppcheck ]; then
+    git clone git://github.com/danmar/cppcheck.git
+else
+    cd cppcheck
+    git pull origin master
+    cd $SETUP_DIR
+fi
+
+cd cppcheck
+git checkout 1.64
+make
+sudo make install
+
 # Our code
 cd
 if [ ! -d rslam ]; then
