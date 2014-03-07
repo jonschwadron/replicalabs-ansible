@@ -36,10 +36,10 @@ sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-4.8 50
 sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-4.8 50
 
 # Update CMake
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.tar.gz
-tar -xzf cmake-2.8.12.tar.gz
-mkdir cmake-2.8.12/build
-cd cmake-2.8.12/build
+wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
+tar -xzf cmake-2.8.12.2.tar.gz
+mkdir cmake-2.8.12.2/build
+cd cmake-2.8.12.2/build
 cmake ..
 make
 make install
