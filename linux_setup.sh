@@ -7,7 +7,7 @@ mkdir $SETUP_DIR
 # Get apt-add-repository
 sudo apt-get install -y software-properties-common python-software-properties
 
-PACKAGES="cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client libeigen3-dev cppcheck glew-utils libglew-dev libxi-dev libxmu-dev libtool autoconf automake uuid-dev libuuid1 valgrind ant"
+PACKAGES="git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client cppcheck glew-utils libglew-dev libxi-dev libxmu-dev libtool autoconf automake uuid-dev libuuid1 valgrind ant libsuitesparse-dev liblapack-dev libncurses5-dev"
 
 sudo apt-add-repository -y ppa:git-core/ppa
 sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
