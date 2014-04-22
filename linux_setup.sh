@@ -92,7 +92,8 @@ fi
 
 cd cppcheck
 git checkout 1.64
-make
+cp -r cfg/ /usr/local/share/cfg
+CFGDIR=/usr/local/share/cfg make
 sudo make install
 
 # Our code
