@@ -1,113 +1,56 @@
 #!/usr/bin/env bash
+set -e
+set -u
 
-SETUP_DIR=~/setup
+FFMPEG_PKGS="libavcodec-dev libavutil-dev libavformat-dev libavdevice-dev libavfilter-dev libswscale-dev libpostproc-dev"
 
-mkdir $SETUP_DIR
+CERES_PKGS="libgflags-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-dev"
 
-# Get apt-add-repository
-sudo apt-get install -y software-properties-common python-software-properties
+PACKAGES="ccache cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libavahi-compat-libdnssd-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite8 libprotoc-dev protobuf-compiler libprotobuf8 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client cppcheck glew-utils libglew-dev libxi-dev libxmu-dev libtool autoconf automake uuid-dev libuuid1 valgrind ant libsuitesparse-dev liblapack-dev libncurses5-dev nvidia-current-dev nvidia-cuda-toolkit nvidia-profiler nvidia-visual-profiler freeglut3 freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev gcc g++ gcc-4.6 g++-4.6 linux-headers-generic linux-source libeigen3-dev libzmq3-dev cppcheck gnome-session-flashback gnome-tweak-tool emacs24 libpng12-dev $FFMPEG_PKGS $CERES_PKGS"
 
-PACKAGES="git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libavahi-compat-libdnssd-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite7 libprotoc7 libprotobuf7 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client cppcheck glew-utils libglew-dev libxi-dev libxmu-dev libtool autoconf automake uuid-dev libuuid1 valgrind ant libsuitesparse-dev liblapack-dev libncurses5-dev"
-
-sudo apt-add-repository -y ppa:git-core/ppa
-sudo apt-add-repository -y ppa:ubuntu-toolchain-r/test
-sudo apt-add-repository -y ppa:boost-latest/ppa
-sudo apt-add-repository -y ppa:chris-lea/protobuf
-sudo apt-get update -y
-sudo apt-get dist-upgrade -y
-sudo apt-get install -y -f $PACKAGES
-sudo apt-get install --no-install-recommends ubuntu-desktop
+#sudo apt-get install -y software-properties-common python-software-properties
+#sudo apt-get update -y
+#sudo apt-get dist-upgrade -y
+#sudo apt-get install -y -f $PACKAGES
+#sudo apt-get install --no-install-recommends -y ubuntu-desktop
 
 # Generate ssh key
-mkdir ~/.ssh
+mkdir -p ~/.ssh
 cd ~/.ssh
-ssh-keygen -t rsa -N "" -f id_rsa
+if [[ ! -e id_rsa ]]; then
+  ssh-keygen -t rsa -N "" -f id_rsa;
+fi
 
-cd $SETUP_DIR
+# Ubuntu's OpenCV is missing the nonfree libraries.
+OPENCV_URL="http://sourceforge.net/projects/opencvlibrary/files/opencv-unix/2.4.9/opencv-2.4.9.zip"
+OPENCV_ZIP="opencv-2.4.9.zip"
+OPENCV_DIR=opencv-2.4.9
 
-# Copy ssh key onto robotics server
-ssh-copy-id rpg@robotics.gwu.edu
+mkdir -p ~/setup
+cd ~/setup
 
-# Install custom built rpg dependencies
-sudo chmod -R 777 /usr/local;
+if [[ ! -f $OPENCV_ZIP ]]; then
+    wget $OPENCV_URL
+fi
 
-# Make GCC 4.8 the default
-sudo update-alternatives --install /usr/bin/cc cc /usr/bin/gcc-4.8 50
-sudo update-alternatives --install /usr/bin/c++ c++ /usr/bin/g++-4.8 50
+if [[ ! -d $OPENCV_DIR ]]; then
+    unzip $OPENCV_ZIP
+fi
 
-# Update CMake
-wget http://www.cmake.org/files/v2.8/cmake-2.8.12.2.tar.gz
-tar -xzf cmake-2.8.12.2.tar.gz
-mkdir cmake-2.8.12.2/build
-cd cmake-2.8.12.2/build
-cmake ..
-make
-make install
+# Open up /usr/local for installation
+sudo chmod -R uga+rwx /usr/local
 
-# Updated Eigen
-wget http://bitbucket.org/eigen/eigen/get/3.2.0.tar.gz
-tar -xzf 3.2.0.tar.gz
-cd eigen-eigen-ffa86ffb5570/
+mkdir -p $OPENCV_DIR/build
+cd $OPENCV_DIR/build
+#cmake .. -DCMAKE_BUILD_TYPE=Release
+#make install -j4
+
+cd ~/setup
+
+git clone https://ceres-solver.googlesource.com/ceres-solver
+cd ceres-solver
+git checkout 1.8.0
 mkdir build
 cd build
-cmake ..
-make install
-
-wget http://download.zeromq.org/zeromq-4.0.3.tar.gz
-tar -xzf zeromq-4.0.3.tar.gz
-cd zeromq-4.0.3
-./autogen.sh
-./configure
-make install
-
-# zmq.hpp
-cd /usr/local/include
-wget https://raw.github.com/zeromq/cppzmq/master/zmq.hpp
-cd $SETUP_DIR
-
-# OpenCV
-if [ ! -d opencv ]; then
-    git clone https://github.com/Itseez/opencv.git
-else
-    cd opencv
-    git pull origin master
-    cd ..
-fi
-cd opencv
-git checkout 2.4.6
-mkdir build
-cd build
-cmake .. -DENABLE_PRECOMPILED_HEADERS=OFF
-make
-make install
-
-cd $SETUP_DIR
-if [ ! -d cppcheck ]; then
-    git clone git://github.com/danmar/cppcheck.git
-else
-    cd cppcheck
-    git pull origin master
-    cd $SETUP_DIR
-fi
-
-cd cppcheck
-git checkout 1.64
-cp -r cfg/ /usr/local/share/cfg
-CFGDIR=/usr/local/share/cfg make
-sudo make install
-
-# Our code
-cd
-if [ ! -d rslam ]; then
-    git clone --recursive https://github.com/gwu-robotics/rslam.git
-else
-    cd rslam
-    git pull origin master
-    git submodule update --init --recursive;
-    cd ..
-fi
-
-mkdir rslam/build
-cd rslam/build
-cmake ../rslam
-make
+cmake .. -DCMAKE_BUILD_TYPE=Release
+make -j4 install
