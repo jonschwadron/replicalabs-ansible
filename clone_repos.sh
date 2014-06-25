@@ -29,8 +29,19 @@ for r in $CMAKE_REPOS; do
     mkdir -p $BUILD_DIR
     cd $BUILD_DIR
 
-    cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
-    make -j4 install
+    if [[ $r == "Sophus" ]]; then
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
+	make -j4 install
+    elif [[ $r == "HAL" ]]; then
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	make -j4 install
+    elif [[ $r == "Kangaroo" ]]; then
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	make -j4 install
+    else
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
+	make -j4 install
+    fi
 done
 
 for r in $OTHER_REPOS; do
