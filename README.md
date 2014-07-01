@@ -18,7 +18,7 @@ These four scripts should do all that's needed to create a working development s
 
 Software packages
 -------------
-These were the packages that were cloned, but not built. They are the main software bundles of Replica Labs.
+These were the packages that were cloned, but not built. Configure what is needed for you. 
 
 - iDTAM: Should not be needed.
 - VideoUploader: The Android prototype application, which will become the Rendor app beta.
