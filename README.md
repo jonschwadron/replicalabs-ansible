@@ -1,4 +1,4 @@
-REPLICA LABS SETUP SCRIPTS
+Replica Labs Setup
 ====================================
 
 Recommended Configuration
