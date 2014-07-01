@@ -7,7 +7,7 @@ Rendor runs on an AWS g2.2xlarge GPU server. The instance that we use runs Ubunt
 
 Build Order
 -------------
-These scripts have been provided to facilitate the build of all required libraries on a brand new 14.04 operating system. Run the scripts in the order provided. If they do not run, simply change permissions [sudo chmod +x <script>.sh]. 
+These scripts have been provided to facilitate the build of all required libraries on a brand new 14.04 operating system. Run the scripts in the order provided. If they do not run, simply change permissions [sudo chmod +x script.sh]. 
 
 - linux_setup.sh: Installs all packages and dependencies for Replica Labs libraries. The OpenCV download might hang; if so, download the .zip directly (copy line 33) and rerun the script.
 - clone_repos.sh: Clones all repositories under the Replica Labs GitHub account. The core libraries are built for you. The rest (iDTAM, VideoUpoader, Rendor, and Server) are merely cloned. Build them as needed.
