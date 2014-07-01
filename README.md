@@ -3,7 +3,8 @@ Replica Labs Setup
 
 Recommended Configuration
 -----------------
-Rendor runs on an AWS g2.2xlarge GPU server. The instance that we use runs Ubuntu v14.04, nicknamed Trusty Tahr. We recommend that you work directly with 14.04 on your console in order to best simulate the conditions found on the server. 
+Rendor runs on an AWS g2.2xlarge GPU server. The instance that we use runs Ubuntu v14.04, nicknamed Trusty Tahr. We recommend that you work directly with 14.04 on your console in order to best simulate the conditions found on the server. It can be downloaded here:
+http://releases.ubuntu.com/14.04/
 
 Build Order
 -------------
