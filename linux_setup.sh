@@ -47,7 +47,9 @@ make install -j4
 
 cd ~/setup
 
-git clone https://ceres-solver.googlesource.com/ceres-solver
+if [[ -d ceres-solver ]]; then
+    git clone https://ceres-solver.googlesource.com/ceres-solver;
+fi
 cd ceres-solver
 git checkout 1.8.0
 mkdir build
