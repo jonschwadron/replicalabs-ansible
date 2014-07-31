@@ -17,6 +17,12 @@ These scripts have been provided to facilitate the build of all required librari
 
 These four scripts should do all that's needed to create a working development station.
 
+NVIDIA Setup
+-------------
+Download the NVIDIA driver (http://us.download.nvidia.com/XFree86/Linux-x86_64/331.89/NVIDIA-Linux-x86_64-331.89.run) and chmod 755.  Make sure to run "sudo".  Two potential problems:
+- the script requires the kernel module to be compiled using gcc-4.8.  To do this, delete the symbolic link in /usr/bin/gcc (if pointing to gcc 4.4) and create a new one [ln -s /usr/bin/gcc-4.8 /usr/bin/gcc].
+- the script may fail to install if X is running.  To stop the service, run "sudo service lightdm stop", then retry the install script.
+
 Software packages
 -------------
 These were the packages that were cloned, but not built. Configure what is needed for you. 
@@ -24,6 +30,4 @@ These were the packages that were cloned, but not built. Configure what is neede
 - iDTAM: Should not be needed.
 - VideoUploader: The Android prototype application, which will become the Rendor app beta.
 - Rendor: The mesh creator, and the core of the Rendor project. Utilizes computer vision algorithms, supported by GPU, to create a 3D mesh of a video.
-- Server: All the scripts and processes to communicate to and from the AWS server. 
-
-
+- Server: All the scripts and processes to communicate to and from the AWS server.
