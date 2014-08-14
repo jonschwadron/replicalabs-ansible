@@ -9,7 +9,7 @@ CloneReplicaRepo() {
     repo=$1
     if [[ ! -d $repo ]]; then
 	echo "Cloning $repo"
-	git clone git@github.com:ReplicaLabs/$repo
+	git clone git@bitbucket.org:replicalabs/$repo
     else
 	echo "Updating $repo"
 	cd $repo
