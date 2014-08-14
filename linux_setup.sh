@@ -10,13 +10,13 @@ CERES_PKGS="libgflags-dev libgoogle-glog-dev libatlas-base-dev libsuitesparse-de
 
 PYTHON_PKGS="pep8 pyflakes python-pip"
 
-DB_PKGS="lamp-server mysql libmysqlclient-dev"
+DB_PKGS="libmysqlclient-dev mysql-common"
 
 PACKAGES="linux-image-generic libassimp-dev ccache cmake cmake-curses-gui git build-essential subversion bzr default-jdk doxygen freeglut3 freeglut3-dev g++-4.8 gcc-4.8 git-core git-gui git-svn gitk graphviz htop libavcodec-dev libavformat-dev libavutil-dev libavahi-client-dev libavahi-compat-libdnssd-dev libblas3gf libblas-dev libboost1.54-all-dev libprotobuf-dev libprotobuf-c0 libprotobuf-c0-dev libprotobuf-lite8 libprotoc-dev protobuf-compiler libprotobuf8 libtbb-dev libtbb2 libuuid1 mercurial openssh-server openssh-client cppcheck glew-utils libglew-dev libxi-dev libxmu-dev libtool autoconf automake uuid-dev libuuid1 valgrind ant libsuitesparse-dev liblapack-dev libncurses5-dev nvidia-current-dev nvidia-cuda-toolkit nvidia-profiler nvidia-visual-profiler freeglut3 freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev gcc g++ gcc-4.6 g++-4.6 linux-headers-generic linux-source libeigen3-dev libzmq3-dev cppcheck gnome-session-flashback gnome-tweak-tool emacs24 libpng12-dev meshlab $FFMPEG_PKGS $CERES_PKGS $PYTHON_PKGS $DB_PKGS"
 
 sudo cp "$SETUP_REPO/sources.list" "/etc/apt/sources.list"
 sudo apt-get update -y
-sudo apt-get install -y software-properties-common python-software-properties
+sudo apt-get install -y python-software-properties || sudo apt-get install -y software-properties-common
 sudo apt-get dist-upgrade -y
 sudo apt-get install -y -f $PACKAGES
 sudo apt-get install --no-install-recommends -y ubuntu-desktop
@@ -54,12 +54,12 @@ make install -j4
 
 cd ~/setup
 
-if [[ -d ceres-solver ]]; then
+if [[ !-d ceres-solver ]]; then
     git clone https://ceres-solver.googlesource.com/ceres-solver;
 fi
 cd ceres-solver
 git checkout 1.8.0
-mkdir build
+mkdir -p build
 cd build
 cmake .. -DCMAKE_BUILD_TYPE=Release
 make -j4 install
