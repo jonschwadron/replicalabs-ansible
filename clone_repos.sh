@@ -20,7 +20,7 @@ CloneReplicaRepo() {
 
 CMAKE_REPOS="miniglog GLConsole Sophus Pangolin Calibu HAL SceneGraph Node Kangaroo"
 
-OTHER_REPOS="iDTAM VideoUploader Rendor Server"
+OTHER_REPOS=("iDTAM VideoUploader rendor-02 Server meshify")
 
 for r in $CMAKE_REPOS; do
     CloneReplicaRepo $r
