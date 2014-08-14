@@ -33,10 +33,10 @@ for r in $CMAKE_REPOS; do
 	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
 	make -j4 install
     elif [[ $r == "HAL" ]]; then
-	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	make -j4 install
     elif [[ $r == "Kangaroo" ]]; then
-	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	make -j4 install
     else
 	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
