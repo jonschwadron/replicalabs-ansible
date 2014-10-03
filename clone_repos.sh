@@ -9,7 +9,7 @@ CloneReplicaRepo() {
     repo=$1
     if [[ ! -d $repo ]]; then
 	echo "Cloning $repo"
-	git clone git@github.com:ReplicaLabs/$repo
+	git clone git@bitbucket.org:replicalabs/$repo
     else
 	echo "Updating $repo"
 	cd $repo
@@ -20,7 +20,7 @@ CloneReplicaRepo() {
 
 CMAKE_REPOS="miniglog GLConsole Sophus Pangolin Calibu HAL SceneGraph Node Kangaroo"
 
-OTHER_REPOS="iDTAM VideoUploader Rendor Server"
+OTHER_REPOS=("iDTAM VideoUploader rendor-02 Server meshify")
 
 for r in $CMAKE_REPOS; do
     CloneReplicaRepo $r
@@ -33,10 +33,10 @@ for r in $CMAKE_REPOS; do
 	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
 	make -j4 install
     elif [[ $r == "HAL" ]]; then
-	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	make -j4 install
     elif [[ $r == "Kangaroo" ]]; then
-	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATONS=OFF
+	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	make -j4 install
     else
 	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
