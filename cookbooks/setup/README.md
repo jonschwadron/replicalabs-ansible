@@ -1,68 +1,33 @@
-setup Cookbook
-==============
-TODO: Enter the cookbook description here.
+Replica Labs Setup
+====================================
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+Recommended Configuration
+-----------------
+Rendor runs on an AWS g2.2xlarge GPU server. The instance that we use runs Ubuntu v14.04, nicknamed Trusty Tahr. We recommend that you work directly with 14.04 on your console in order to best simulate the conditions found on the server. It can be downloaded here:
+http://releases.ubuntu.com/14.04/
 
-Requirements
-------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
+Build Order
+-------------
+These scripts have been provided to facilitate the build of all required libraries on a brand new 14.04 operating system. Run the scripts in the order provided. If they do not run, simply change permissions [sudo chmod +x script.sh]. 
 
-e.g.
-#### packages
-- `toaster` - setup needs toaster to brown your bagel.
+- linux_setup.sh: Installs all packages and dependencies for Replica Labs libraries. The OpenCV download might hang; if so, download the .zip directly (copy line 33) and rerun the script.
+- clone_repos.sh: Clones all repositories under the Replica Labs GitHub account. The core libraries are built for you. The rest (iDTAM, VideoUpoader, Rendor, and Server) are merely cloned. Build them as needed.
+- android.sh: Downloads the Linux ADT bundle in your top directory.
+- optimus.sh: Run this script if your configuration uses NVIDIA OPTIMUS. Extra software must be downloaded to bypass some of the preconfigured settings. When a GPU process is run after this script is executed, start the command line with 'primusrun' to utilize this bypass.
 
-Attributes
-----------
-TODO: List your cookbook attributes here.
+These four scripts should do all that's needed to create a working development station.
 
-e.g.
-#### setup::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['setup']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+NVIDIA Setup
+-------------
+Download the NVIDIA driver (http://us.download.nvidia.com/XFree86/Linux-x86_64/331.89/NVIDIA-Linux-x86_64-331.89.run) and chmod 755.  Make sure to run "sudo".  Two potential problems:
+- the script requires the kernel module to be compiled using gcc-4.8.  To do this, delete the symbolic link in /usr/bin/gcc (if pointing to gcc 4.4) and create a new one [ln -s /usr/bin/gcc-4.8 /usr/bin/gcc].
+- the script may fail to install if X is running.  To stop the service, run "sudo service lightdm stop", then retry the install script.
 
-Usage
------
-#### setup::default
-TODO: Write usage instructions for each cookbook.
+Software packages
+-------------
+These were the packages that were cloned, but not built. Configure what is needed for you. 
 
-e.g.
-Just include `setup` in your node's `run_list`:
-
-```json
-{
-  "name":"my_node",
-  "run_list": [
-    "recipe[setup]"
-  ]
-}
-```
-
-Contributing
-------------
-TODO: (optional) If this is a public cookbook, detail the process for contributing. If this is a private cookbook, remove this section.
-
-e.g.
-1. Fork the repository on Github
-2. Create a named feature branch (like `add_component_x`)
-3. Write your change
-4. Write tests for your change (if applicable)
-5. Run the tests, ensuring they all pass
-6. Submit a Pull Request using Github
-
-License and Authors
--------------------
-Authors: TODO: List authors
+- iDTAM: Should not be needed.
+- VideoUploader: The Android prototype application, which will become the Rendor app beta.
+- Rendor: The mesh creator, and the core of the Rendor project. Utilizes computer vision algorithms, supported by GPU, to create a 3D mesh of a video.
+- Server: All the scripts and processes to communicate to and from the AWS server.
