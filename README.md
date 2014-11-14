@@ -5,7 +5,6 @@ To-do:
 -----------------
 Rewrite recipes for the following cookbooks:
 
-e.g.
 1. linux
 2. optimus
 3. replicalabs::repo
@@ -21,4 +20,3 @@ To create a cookbook:
 ```
 knife cookbook create examplecookbook
 ```
-
