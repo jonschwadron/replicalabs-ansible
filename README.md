@@ -4,8 +4,9 @@
 Rewrite recipes for the following cookbooks:
 
 *  linux
-*  optimus
 *  replicalabs::repo
+*  optimus
+
 
 ## Install Chef ##
 ```
