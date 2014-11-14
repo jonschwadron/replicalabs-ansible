@@ -35,9 +35,3 @@ Clone this Repository and run the following command to start the setup:
 ```
 chef-client --local-mode --runlist 'recipe[setup]'
 ```
-
-To create a cookbook:
------------------
-```
-knife cookbook create examplecookbook
-```
