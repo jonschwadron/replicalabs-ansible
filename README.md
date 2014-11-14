@@ -4,6 +4,8 @@ Replica Labs Setup with Chef
 To-do:
 -----------------
 Rewrite recipes for the following cookbooks:
+
+e.g.
 1. linux
 2. optimus
 3. replicalabs::repo
