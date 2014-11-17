@@ -7,3 +7,7 @@
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
+
+chef_gem 'rubyzip' do
+  action :install
+end

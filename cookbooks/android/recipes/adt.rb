@@ -1,9 +1,9 @@
-#                 _ _           _       _         
-#  _ __ ___ _ __ | (_) ___ __ _| | __ _| |__  ___ 
+#                 _ _           _       _
+#  _ __ ___ _ __ | (_) ___ __ _| | __ _| |__  ___
 # | '__/ _ \ '_ \| | |/ __/ _` | |/ _` | '_ \/ __|
 # | | |  __/ |_) | | | (_| (_| | | (_| | |_) \__ \
 # |_|  \___| .__/|_|_|\___\__,_|_|\__,_|_.__/|___/
-#          |_|                                    
+#          |_|
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
@@ -23,9 +23,20 @@ remote_file "#{android_directory}/#{src_file}" do
   not_if { ::File.exists?(extract_path) }
 end
 
-bash 'unzip' do
-  code <<-EOH
-    unzip #{extract_path} -d #{android_directory}	
-    EOH
-    not_if { ::File.exists?(src_directory) }
+ruby_block "unzip" do
+  block do
+    require 'rubygems'
+    require 'zip'
+    def unzip_file (file, destination)
+      Zip::File.open(file) do |zip_file|
+      zip_file.each do |f|
+        f_path = File.join(destination, f.name)
+        FileUtils.mkdir_p(File.dirname(f_path))
+        f.extract(f_path)
+        end
+      end
+    end
+    unzip_file("#{extract_path}", "#{android_directory}")
+  end
+  not_if { ::File.exists?(src_directory) }
 end
