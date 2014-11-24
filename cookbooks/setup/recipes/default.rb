@@ -9,7 +9,10 @@
 # All rights reserved - Do Not Redistribute
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 #Display messages with spinner
+=======
+>>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
 =======
 >>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
 def show_wait_spinner(fps=10)
@@ -24,15 +27,21 @@ def show_wait_spinner(fps=10)
     end
   end
 <<<<<<< HEAD
+<<<<<<< HEAD
   yield.tap{
     iter = false
     spinner.join
   }
 =======
+=======
+>>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
   yield.tap{       # After yielding to the block, save the return value
     iter = false   # Tell the thread to exit, cleaning up after itself…
     spinner.join   # …and wait for it to do so.
   }                # Use the block's return value as the method's
+<<<<<<< HEAD
+>>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
+=======
 >>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
 end
 
@@ -49,8 +58,12 @@ print "\n\n"
 # Installs all packages and dependencies for Replica Labs libraries. The OpenCV download might hang; if so, download the .zip directly (copy line 33) and rerun the script.
 include_recipe 'linux'
 <<<<<<< HEAD
+<<<<<<< HEAD
 include_recipe 'linux::essentials'
 include_recipe 'linux::packages'
+=======
+include_recipe 'linux::rubyzip'
+>>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
 =======
 include_recipe 'linux::rubyzip'
 >>>>>>> c0798e66067003378ba007b6b9a05c3ff371e71d
