@@ -1,0 +1,1 @@
+Run this script if your configuration uses NVIDIA OPTIMUS. Extra software must be downloaded to bypass some of the preconfigured settings. When a GPU process is run after this script is executed, start the command line with 'primusrun' to utilize this bypass.
