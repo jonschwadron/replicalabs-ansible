@@ -276,14 +276,14 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "19478204",
-        "kb_used": "8605288",
-        "kb_available": "9860436",
-        "percent_used": "47%",
+        "kb_used": "8715428",
+        "kb_available": "9750296",
+        "percent_used": "48%",
         "mount": "/",
         "total_inodes": "1245184",
-        "inodes_used": "292897",
-        "inodes_available": "952287",
-        "inodes_percent_used": "24%",
+        "inodes_used": "323159",
+        "inodes_available": "922025",
+        "inodes_percent_used": "26%",
         "fs_type": "ext4",
         "mount_options": [
           "rw",
@@ -292,13 +292,13 @@
       },
       "none": {
         "kb_size": "102400",
-        "kb_used": "100",
-        "kb_available": "102300",
+        "kb_used": "112",
+        "kb_available": "102288",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "126308",
-        "inodes_used": "41",
-        "inodes_available": "126267",
+        "inodes_used": "44",
+        "inodes_available": "126264",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -312,8 +312,8 @@
         "percent_used": "1%",
         "mount": "/dev",
         "total_inodes": "123614",
-        "inodes_used": "453",
-        "inodes_available": "123161",
+        "inodes_used": "454",
+        "inodes_available": "123160",
         "inodes_percent_used": "1%",
         "fs_type": "devtmpfs",
         "mount_options": [
@@ -328,8 +328,8 @@
         "percent_used": "2%",
         "mount": "/run",
         "total_inodes": "126308",
-        "inodes_used": "448",
-        "inodes_available": "125860",
+        "inodes_used": "450",
+        "inodes_available": "125858",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -562,6 +562,58 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "btrfs": {
+          "size": "835954",
+          "refcount": "0"
+        },
+        "raid6_pq": {
+          "size": "97812",
+          "refcount": "1"
+        },
+        "xor": {
+          "size": "21411",
+          "refcount": "1"
+        },
+        "ufs": {
+          "size": "74890",
+          "refcount": "0"
+        },
+        "qnx4": {
+          "size": "13317",
+          "refcount": "0"
+        },
+        "hfsplus": {
+          "size": "107516",
+          "refcount": "0"
+        },
+        "hfs": {
+          "size": "54677",
+          "refcount": "0"
+        },
+        "minix": {
+          "size": "36140",
+          "refcount": "0"
+        },
+        "ntfs": {
+          "size": "97369",
+          "refcount": "0"
+        },
+        "msdos": {
+          "size": "17332",
+          "refcount": "0"
+        },
+        "jfs": {
+          "size": "181348",
+          "refcount": "0"
+        },
+        "xfs": {
+          "size": "912173",
+          "refcount": "0"
+        },
+        "libcrc32c": {
+          "size": "12644",
+          "refcount": "2"
+        },
         "hid_generic": {
           "size": "12548",
           "refcount": "0"
@@ -755,31 +807,31 @@
     },
     "memory": {
       "swap": {
-        "cached": "22904kB",
+        "cached": "23708kB",
         "total": "1046524kB",
-        "free": "254636kB"
+        "free": "229676kB"
       },
       "total": "1010464kB",
-      "free": "81440kB",
-      "buffers": "7684kB",
-      "cached": "297896kB",
-      "active": "358704kB",
-      "inactive": "387312kB",
-      "dirty": "72kB",
+      "free": "70348kB",
+      "buffers": "12304kB",
+      "cached": "204448kB",
+      "active": "343300kB",
+      "inactive": "368132kB",
+      "dirty": "96kB",
       "writeback": "0kB",
-      "anon_pages": "417728kB",
-      "mapped": "58256kB",
-      "slab": "63732kB",
-      "slab_reclaimable": "31520kB",
-      "slab_unreclaim": "32212kB",
-      "page_tables": "33376kB",
+      "anon_pages": "471740kB",
+      "mapped": "70100kB",
+      "slab": "60728kB",
+      "slab_reclaimable": "27544kB",
+      "slab_unreclaim": "33184kB",
+      "page_tables": "34688kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1551756kB",
-      "committed_as": "4231896kB",
+      "committed_as": "4438828kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "162480kB",
-      "vmalloc_chunk": "34359562392kB"
+      "vmalloc_used": "168148kB",
+      "vmalloc_chunk": "34359557944kB"
     },
     "network": {
       "interfaces": {
@@ -871,15 +923,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "3300448",
-              "packets": "4467",
+              "bytes": "3571077",
+              "packets": "4603",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "3300448",
-              "packets": "4467",
+              "bytes": "3571077",
+              "packets": "4603",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -889,16 +941,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "24095285",
-              "packets": "392912",
+              "bytes": "33550864",
+              "packets": "548407",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1198052664",
-              "packets": "797732",
+              "bytes": "1644883703",
+              "packets": "1095424",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -921,11 +973,11 @@
       }
     },
     "cloud_v2": null,
-    "uptime_seconds": 10791,
-    "uptime": "2 hours 59 minutes 51 seconds",
-    "idletime_seconds": 8528,
-    "idletime": "2 hours 22 minutes 08 seconds",
-    "ohai_time": 1416881310.2874498,
+    "uptime_seconds": 10192,
+    "uptime": "2 hours 49 minutes 52 seconds",
+    "idletime_seconds": 7149,
+    "idletime": "1 hours 59 minutes 09 seconds",
+    "ohai_time": 1416880711.1909108,
     "command": {
       "ps": "ps -ef"
     },
@@ -1575,9 +1627,9 @@
     "current_user": "user",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCz2vGOcooTFilPJJcg+MJ+iDuTFwiA2515HmBFHymJYX8mESj38w7y+yU5P096g4hdUtvhZ2AxDIdxiiSruEhHmKduRO/cv/wcTAm8AY1g+2LjYiGaimXz6lh4nDSxuejWjGPJnIupc4ayjzExYyf/g+8PGy2WBPbFCALXFXzEcXSi8NbJlVtrBYDP11RQRiLkBuxwBYCvT66nWkTv6y5XV7gxxm0wW0tkclUmQwfgAmyPAf/M9T1g9FPfRMA13oq7lNfQnS19EbinhGEKxxT7fWEmZlGieWzw7NPNaT+12aqKVoHSPxSEKUvLT0GJR0O2WAwr4VLxv51Gvv2y7yaJ",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAKNKrH5HckP8cohSb8rCNPvNmibINe+MWJ/MsSjYLRQNadv6G6doEAzzAW+CeN6jA1qBFuBYL97VosSrA1chx68WY3pG7kamDEHQ2+tH0+ixRKZinmFWkTVgrN2STsZd4t9YoEbgUv/ZRO69G8JT7mXXd62jeHBBZLVwkjsOUma9AAAAFQCdXyWx4KX38HifmfDpEYhC6R1Y1QAAAIEAjF7M/knSEqmew3MhE9rpR6hBpfA2bdygXg3NFMnIhVJO+TLnBWJQQ0SWbxlytBz30m3UwM4cyXgfUnKXwEf2kxPOzhYPhxiom8sEEaykKcu9d61rmTP+ZJSQcDndSFDcUV+VXmppRsdktfPeqDqGcqebgzDOUyuaUCkpVsVNXk0AAACAHglBVrYdSuiDhpuWO0zRmtYkbKOCTjy65UA+ZrepVvrLPPG0Ob00mbgX/PCL4T5ZFTht4MQaLjLp0t65IFgdL9PVmUZEHDGO9wk1i5Fq5aLGNJHWBbK0ecEgZ86XsIQssyvK73G8Guo0y/uxM7Jg8F7gwg+/ePu7VkJsL3EA/8Q=",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAEtHZKnm4p+vHHYf12DcA1Gk1OiKci8OMEN2cPn2V9XukB6leunSaj6MZubP06zacxc02SA1EgjJeqRan9l/kk=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDkkvdTZDCF8d08MZD79ncn5jlrndaXi5L/V1BiCMojo97hmQ35dI49xWFjDTXhPBg8IMb6uHsvim5+DW/R2yL1iWyrIFDks6r6yq1Tati2TNa0XwzGtqMJ9f4u3KKxcJYFAVnRNu528YCYgbUdcRXG0CWD+XEZnKln+zAbRG/x0uKYHnN9KVDnJBlrQkTkjILdCM0ucw+wlVTzAT6Al+JoxbyTuraSjng0sUzASXb49WwcpHhHsc0yXNuChaOVSRXhoUAi5laIjhpJ4BIuQCljoTcRr80HMCYJtRGYl0A3IM1lttEEQtR583gLqlVb9KCVrVtyABf09PHkx4MIWbSb",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAME51xeVs5Fmc7M9bg+JECizPDF5+Djiopwhu66a8kvzGPdSS8S0v7zjs7PBA5BjgjwaTRoFEqC8uZrIXoycwvI4QNN8SwVfaCNpTqPCWPOhjjbb+1kAjcIB/O1KAJceL7M9AeHPBiu0Oxpx2B9boYoX5QvhCCzA+XmHtWNFBB1lAAAAFQCiH/26+40L0cswbAnslRKq5lqXrwAAAIBgW9zOIyrcaibkqch/LeR7jdJBSI2bYkWE4T5NPHMBQ+2MqJwAsZdGAkY3JQvZS5nQAit38E1mGJnly2dkJTZd5oo2LvYWsUfkiBp7Z/odrKz8XpdsIj02o23R+xzv1Rr1IT7/xAHW3Rw4ET/hxBxD75L7U2Bj23S50su2oT+6xQAAAIEAvY0+zDsM9Z6wyEY3yHS9Q/ZXwhZIL7q6Jxb/xHmL97nejZwUwn1/WWxcYOyLA8ENdzmRRWxxcJ6L1btX/RXYwlDjf4Fm7/XCPz/MI9LjldKNuCz4vVdKVVlS9TFdG3VrtyG3ZoZr51a6wne5gxxOyMNdUUv4bO1F9qn097OrwPE=",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBI2YIhpC5Z9PuNUL0MXiVcVD7T8ItFu0RPgt5a8LBu/s9q2hnfwjEDAp6WWeu81W++e+AvRwfXKGmtNtDRnDFnA=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
@@ -3652,10 +3704,12 @@
     "fqdn": "ubuntu",
     "domain": null,
     "recipes": [
+      "chef_resource_merging",
       "setup",
       "linux",
       "opencv",
       "opencv::install_source",
+      "chef_resource_merging::default",
       "setup::default",
       "linux::default",
       "linux::essentials",
@@ -3671,6 +3725,7 @@
     ]
   },
   "run_list": [
+    "recipe[chef_resource_merging]",
     "recipe[setup]",
     "recipe[linux]",
     "recipe[opencv]",
