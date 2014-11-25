@@ -5,8 +5,241 @@
 
     ]
   },
+  "default": {
+    "apt": {
+      "cacher-client": {
+        "restrict_environment": false
+      },
+      "cacher_dir": "/var/cache/apt-cacher-ng",
+      "cacher_interface": null,
+      "cacher_port": 3142,
+      "caching_server": false,
+      "compiletime": false,
+      "compile_time_update": false,
+      "key_proxy": "",
+      "cache_bypass": {
+      },
+      "periodic_update_min_delay": 86400,
+      "launchpad_api_version": "1.0",
+      "unattended_upgrades": {
+        "enable": false,
+        "update_package_lists": true,
+        "allowed_origins": [
+          "Ubuntu trusty"
+        ],
+        "package_blacklist": [
+
+        ],
+        "auto_fix_interrupted_dpkg": false,
+        "minimal_steps": false,
+        "install_on_shutdown": false,
+        "mail": null,
+        "mail_only_on_error": true,
+        "remove_unused_dependencies": false,
+        "automatic_reboot": false,
+        "dl_limit": null
+      }
+    },
+    "build-essential": {
+      "compile_time": false
+    },
+    "chef_handler": {
+      "root_user": "root",
+      "root_group": "root",
+      "handler_path": "/home/user/.chef/local-mode-cache/handlers"
+    },
+    "windows": {
+      "allow_pending_reboots": true,
+      "allow_reboot_on_failure": false,
+      "rubyzipversion": null,
+      "reboot_timeout": 60
+    },
+    "yum": {
+      "main": {
+        "cachedir": "/var/cache/yum/$basearch/$releasever",
+        "distroverpkg": "ubuntu-release",
+        "alwaysprompt": null,
+        "assumeyes": null,
+        "bandwidth": null,
+        "bugtracker_url": null,
+        "clean_requirements_on_remove": null,
+        "color": null,
+        "color_list_available_downgrade": null,
+        "color_list_available_install": null,
+        "color_list_available_reinstall": null,
+        "color_list_available_upgrade": null,
+        "color_list_installed_extra": null,
+        "color_list_installed_newer": null,
+        "color_list_installed_older": null,
+        "color_list_installed_reinstall": null,
+        "color_search_match": null,
+        "color_update_installed": null,
+        "color_update_local": null,
+        "color_update_remote": null,
+        "commands": null,
+        "debuglevel": null,
+        "diskspacecheck": null,
+        "enable_group_conditionals": null,
+        "errorlevel": null,
+        "exactarch": null,
+        "exclude": null,
+        "gpgcheck": true,
+        "group_package_types": null,
+        "groupremove_leaf_only": null,
+        "history_list_view": null,
+        "history_record": null,
+        "history_record_packages": null,
+        "http_caching": null,
+        "installonly_limit": null,
+        "installonlypkgs": null,
+        "installroot": null,
+        "keepalive": null,
+        "keepcache": false,
+        "kernelpkgnames": null,
+        "localpkg_gpgcheck": null,
+        "logfile": "/var/log/yum.log",
+        "max_retries": null,
+        "mdpolicy": null,
+        "metadata_expire": null,
+        "mirrorlist_expire": null,
+        "multilib_policy": null,
+        "obsoletes": null,
+        "overwrite_groups": null,
+        "password": null,
+        "path": "/etc/yum.conf",
+        "persistdir": null,
+        "pluginconfpath": null,
+        "pluginpath": null,
+        "plugins": null,
+        "protected_multilib": null,
+        "protected_packages": null,
+        "proxy": null,
+        "proxy_password": null,
+        "proxy_username": null,
+        "recent": null,
+        "releasever": null,
+        "repo_gpgcheck": null,
+        "reset_nice": null,
+        "rpmverbosity": null,
+        "showdupesfromrepos": null,
+        "skip_broken": null,
+        "ssl_check_cert_permissions": null,
+        "sslcacert": null,
+        "sslclientcert": null,
+        "sslclientkey": null,
+        "sslverify": null,
+        "syslog_device": null,
+        "syslog_facility": null,
+        "syslog_ident": null,
+        "throttle": null,
+        "timeout": null,
+        "tolerant": false,
+        "tsflags": null,
+        "username": null
+      },
+      "epel-debuginfo": {
+        "repositoryid": "epel-debuginfo",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-source": {
+        "repositoryid": "epel-source",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-debuginfo": {
+        "repositoryid": "epel-testing-debuginfo",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing-source": {
+        "repositoryid": "epel-testing-source",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel-testing": {
+        "repositoryid": "epel-testing",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": false,
+        "managed": false
+      },
+      "epel": {
+        "repositoryid": "epel",
+        "failovermethod": "priority",
+        "gpgcheck": true,
+        "enabled": true,
+        "managed": true
+      }
+    },
+    "yum-epel": {
+      "repositories": [
+        "epel",
+        "epel-debuginfo",
+        "epel-source",
+        "epel-testing",
+        "epel-testing-debuginfo",
+        "epel-testing-source"
+      ]
+    },
+    "python": {
+      "install_method": "package",
+      "prefix_dir": "/usr",
+      "binary": "/usr/bin/python",
+      "url": "http://www.python.org/ftp/python",
+      "version": "2.7.5",
+      "checksum": "3b477554864e616a041ee4d7cef9849751770bc7c39adaf78a94ea145c488059",
+      "configure_options": [
+        "--prefix=/usr"
+      ],
+      "make_options": [
+        "install"
+      ],
+      "pip_location": "/usr/bin/pip",
+      "virtualenv_location": "/usr/bin/virtualenv",
+      "setuptools_version": null,
+      "virtualenv_version": null
+    },
+    "opencv": {
+      "install_method": "package",
+      "repository": "ppa",
+      "package": {
+        "version": "2.4"
+      },
+      "repository_ppa": "stable",
+      "source": {
+        "url": "http://kent.dl.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.9/opencv-2.4.9.zip",
+        "checksum": "7f958389e71c77abdf5efe1da988b80c",
+        "force_recompile": false,
+        "cmake_define": {
+          "MAKE_BUILD_TYPE": "RELEASE",
+          "MAKE_INSTALL_PREFIX": "/usr/local",
+          "BUILD_NEW_PYTHON_SUPPORT": "ON"
+        }
+      }
+    }
+  },
   "automatic": {
     "languages": {
+      "java": {
+        "version": "1.7.0_65",
+        "runtime": {
+          "name": "OpenJDK Runtime Environment (IcedTea 2.5.3)",
+          "build": "7u71-2.5.3-0ubuntu0.14.04.1"
+        },
+        "hotspot": {
+          "name": "OpenJDK 64-Bit Server VM",
+          "build": "24.65-b04, mixed mode"
+        }
+      },
       "c": {
         "gcc": {
           "version": "4.8.2",
@@ -43,14 +276,14 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "19478204",
-        "kb_used": "4707908",
-        "kb_available": "13757816",
-        "percent_used": "26%",
+        "kb_used": "8081528",
+        "kb_available": "10384196",
+        "percent_used": "44%",
         "mount": "/",
         "total_inodes": "1245184",
-        "inodes_used": "230655",
-        "inodes_available": "1014529",
-        "inodes_percent_used": "19%",
+        "inodes_used": "302763",
+        "inodes_available": "942421",
+        "inodes_percent_used": "25%",
         "fs_type": "ext4",
         "mount_options": [
           "rw",
@@ -59,13 +292,13 @@
       },
       "none": {
         "kb_size": "102400",
-        "kb_used": "40",
-        "kb_available": "102360",
+        "kb_used": "100",
+        "kb_available": "102300",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "126308",
-        "inodes_used": "26",
-        "inodes_available": "126282",
+        "inodes_used": "41",
+        "inodes_available": "126267",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -79,8 +312,8 @@
         "percent_used": "1%",
         "mount": "/dev",
         "total_inodes": "123614",
-        "inodes_used": "453",
-        "inodes_available": "123161",
+        "inodes_used": "454",
+        "inodes_available": "123160",
         "inodes_percent_used": "1%",
         "fs_type": "devtmpfs",
         "mount_options": [
@@ -90,13 +323,13 @@
       },
       "tmpfs": {
         "kb_size": "101048",
-        "kb_used": "1048",
-        "kb_available": "100000",
+        "kb_used": "1060",
+        "kb_available": "99988",
         "percent_used": "2%",
         "mount": "/run",
         "total_inodes": "126308",
-        "inodes_used": "446",
-        "inodes_available": "125862",
+        "inodes_used": "450",
+        "inodes_available": "125858",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -148,17 +381,6 @@
           "nodev",
           "none",
           "name=systemd"
-        ]
-      },
-      "vmware-vmblock": {
-        "mount": "/run/vmblock-fuse",
-        "fs_type": "fuse.vmware-vmblock",
-        "mount_options": [
-          "rw",
-          "nosuid",
-          "nodev",
-          "default_permissions",
-          "allow_other"
         ]
       },
       "gvfsd-fuse": {
@@ -340,6 +562,62 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
+        "btrfs": {
+          "size": "835954",
+          "refcount": "0"
+        },
+        "raid6_pq": {
+          "size": "97812",
+          "refcount": "1"
+        },
+        "xor": {
+          "size": "21411",
+          "refcount": "1"
+        },
+        "ufs": {
+          "size": "74890",
+          "refcount": "0"
+        },
+        "qnx4": {
+          "size": "13317",
+          "refcount": "0"
+        },
+        "hfsplus": {
+          "size": "107516",
+          "refcount": "0"
+        },
+        "hfs": {
+          "size": "54677",
+          "refcount": "0"
+        },
+        "minix": {
+          "size": "36140",
+          "refcount": "0"
+        },
+        "ntfs": {
+          "size": "97369",
+          "refcount": "0"
+        },
+        "msdos": {
+          "size": "17332",
+          "refcount": "0"
+        },
+        "jfs": {
+          "size": "181348",
+          "refcount": "0"
+        },
+        "xfs": {
+          "size": "912173",
+          "refcount": "0"
+        },
+        "libcrc32c": {
+          "size": "12644",
+          "refcount": "2"
+        },
+        "hid_generic": {
+          "size": "12548",
+          "refcount": "0"
+        },
         "vmw_balloon": {
           "size": "13415",
           "refcount": "0"
@@ -352,9 +630,17 @@
           "size": "13462",
           "refcount": "0"
         },
+        "usbhid": {
+          "size": "52570",
+          "refcount": "0"
+        },
+        "hid": {
+          "size": "106148",
+          "refcount": "2"
+        },
         "vmwgfx": {
           "size": "175358",
-          "refcount": "5"
+          "refcount": "3"
         },
         "ttm": {
           "size": "85115",
@@ -372,24 +658,24 @@
           "size": "391196",
           "refcount": "10"
         },
-        "drm": {
-          "size": "303102",
-          "refcount": "6"
-        },
         "vmw_vmci": {
           "size": "62966",
           "refcount": "0"
+        },
+        "drm": {
+          "size": "303102",
+          "refcount": "4"
         },
         "i2c_piix4": {
           "size": "22155",
           "refcount": "0"
         },
-        "shpchp": {
-          "size": "37032",
-          "refcount": "0"
-        },
         "mac_hid": {
           "size": "13205",
+          "refcount": "0"
+        },
+        "shpchp": {
+          "size": "37032",
           "refcount": "0"
         },
         "parport_pc": {
@@ -407,18 +693,6 @@
         "parport": {
           "size": "42348",
           "refcount": "3"
-        },
-        "hid_generic": {
-          "size": "12548",
-          "refcount": "0"
-        },
-        "usbhid": {
-          "size": "52570",
-          "refcount": "0"
-        },
-        "hid": {
-          "size": "106148",
-          "refcount": "2"
         },
         "psmouse": {
           "size": "106678",
@@ -447,14 +721,6 @@
         "mptbase": {
           "size": "101822",
           "refcount": "2"
-        },
-        "vmw_pvscsi": {
-          "size": "22858",
-          "refcount": "0"
-        },
-        "vmxnet3": {
-          "size": "49693",
-          "refcount": "0"
         },
         "floppy": {
           "size": "69418",
@@ -541,31 +807,31 @@
     },
     "memory": {
       "swap": {
-        "cached": "4608kB",
+        "cached": "7984kB",
         "total": "1046524kB",
-        "free": "962736kB"
+        "free": "379564kB"
       },
       "total": "1010464kB",
-      "free": "116408kB",
-      "buffers": "5272kB",
-      "cached": "224984kB",
-      "active": "372664kB",
-      "inactive": "389020kB",
-      "dirty": "100kB",
+      "free": "82844kB",
+      "buffers": "23676kB",
+      "cached": "239976kB",
+      "active": "306000kB",
+      "inactive": "427936kB",
+      "dirty": "72kB",
       "writeback": "0kB",
-      "anon_pages": "527252kB",
-      "mapped": "77320kB",
-      "slab": "59768kB",
-      "slab_reclaimable": "30396kB",
-      "slab_unreclaim": "29372kB",
-      "page_tables": "27772kB",
+      "anon_pages": "462344kB",
+      "mapped": "80228kB",
+      "slab": "83172kB",
+      "slab_reclaimable": "49452kB",
+      "slab_unreclaim": "33720kB",
+      "page_tables": "33012kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1551756kB",
-      "committed_as": "3041424kB",
+      "committed_as": "4158776kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "162300kB",
-      "vmalloc_chunk": "34359542780kB"
+      "vmalloc_used": "168040kB",
+      "vmalloc_chunk": "34359547512kB"
     },
     "network": {
       "interfaces": {
@@ -622,8 +888,8 @@
           },
           "state": "up",
           "arp": {
-            "192.168.110.254": "00:50:56:f4:03:1f",
-            "192.168.110.2": "00:50:56:fd:b2:32"
+            "192.168.110.254": "00:50:56:e3:2a:f5",
+            "192.168.110.2": "00:50:56:fc:fa:61"
           },
           "routes": [
             {
@@ -657,15 +923,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "400819",
-              "packets": "1426",
+              "bytes": "11767919",
+              "packets": "9470",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "400819",
-              "packets": "1426",
+              "bytes": "11767919",
+              "packets": "9470",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -675,16 +941,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "441100",
-              "packets": "3565",
+              "bytes": "20763411",
+              "packets": "328968",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "5555538",
-              "packets": "5827",
+              "bytes": "1010311033",
+              "packets": "677526",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -707,11 +973,11 @@
       }
     },
     "cloud_v2": null,
-    "uptime_seconds": 1593,
-    "uptime": "26 minutes 33 seconds",
-    "idletime_seconds": 1357,
-    "idletime": "22 minutes 37 seconds",
-    "ohai_time": 1416909985.3456142,
+    "uptime_seconds": 14810,
+    "uptime": "4 hours 06 minutes 50 seconds",
+    "idletime_seconds": 12242,
+    "idletime": "3 hours 24 minutes 02 seconds",
+    "ohai_time": 1416885329.002931,
     "command": {
       "ps": "ps -ef"
     },
@@ -961,6 +1227,13 @@
           "uid": 1000,
           "shell": "/bin/bash",
           "gecos": "user,,,"
+        },
+        "sshd": {
+          "dir": "/var/run/sshd",
+          "gid": 65534,
+          "uid": 116,
+          "shell": "/usr/sbin/nologin",
+          "gecos": ""
         }
       },
       "group": {
@@ -1354,6 +1627,10 @@
     "current_user": "user",
     "keys": {
       "ssh": {
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDnpMuYUshLb34GLOhvSLbN1IAU+o8nEgMn+Y9zWV2ONBtH2eziPUd9k7xh/cerpfp+mysXH4fG58eqiKlHKVI8OfJb5EZWRIUIogWMv4OAadM7Dcj2lLpHdf4Mj6ra+2HYtTM2vVAdhfTjRpVvmzB33S8ze6IpFCzR7mS4Un85HUPvZNRx38bPsQZdt9d4W05j+2TY4aVUbboIleO9r19rUThLHcaWtKvygnQ1z7jPteectnQFKIgyWUKQpZDBYzhxu7Ck+z+TlgG0pmtxQNS8jjU1d6BvZL+D8q/Yl3BS0ynB3qoS/pfy27CrOEZjXK075442Dbd7CmC1s/CnY8Qb",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBALGFanV3DWEZ/R3K58dIB9mtRfeXzepH6uPx/fZrweGKC8rTrXS8d4NXOlZ7jlhOp7hwcaDRaUYiEu9yKB1IsmzzxqFvPphUxzNDbY4Cqj4OsP8NtFIdqh/tp5LtG9pAw58X541YNc+GLH7eEPivMrEu8jlwwmOsKlvF/9VMjbBhAAAAFQCSCYZlyY62iI/wndEt8Wmy/1eXgwAAAIAN54mEu4fmsKyavui9rOfJbVKZ+bjmMluDH+sjHC56URVkJJ1zkaUfJ63uLjS8m4UlS6G0Ace/ZGThBjrNxd3ylstq0LWdovgFPPGiLM7L95/udpL3GzDwy0F3K7uirFCvMA5gSIxgcrO1/0hCUQ4fU3P9u1WvQvhUh6CZpvtWNgAAAIB6/ulGLH0kgCdOqCkvhN+Prl1T9Smzbgizd7LxsrU/2doB3eMkSyBtlk9loxLm4PZ1b7ZV0s2pOrOK2TAFIN4vJU0NmewK/qm7/rA9lEsxAZ6OsaqYAOuhe8rPbbrejHofgpoGFnjjgGqLqcipeUtVtwuUoAAeNO3MOW0K5Ry0wA==",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBD13c1YtHJu3prXoHguTs0Mk/tdUgv8mjKXRJmdu24sT10D+op869XcZkkTdbb0vSG3BYvhv03HWchyQsphSPkM=",
+        "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
     "init_package": "init",
@@ -3428,14 +3705,7 @@
     "domain": null,
     "recipes": [
       "setup",
-      "setup::default",
-      "linux::default",
-      "linux::essentials",
-      "linux::packages",
-      "replicalabs::default",
-      "replicalabs::repo",
-      "optimus::default",
-      "optimus::bumblebee"
+      "setup::default"
     ],
     "roles": [
 

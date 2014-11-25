@@ -37,11 +37,3 @@ show_wait_spinner{
   sleep rand(4)+2 # Simulate a task taking an unknown amount of time
 }
 print "\n\n"
-
-include_recipe 'linux'
-include_recipe 'linux::essentials'
-include_recipe 'linux::packages'
-include_recipe 'replicalabs'
-include_recipe 'replicalabs::repo'
-include_recipe 'optimus'
-include_recipe 'optimus::bumblebee'

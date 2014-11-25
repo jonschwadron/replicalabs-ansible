@@ -7,3 +7,6 @@
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
+
+include_recipe 'linux::essentials'
+include_recipe 'linux::packages'

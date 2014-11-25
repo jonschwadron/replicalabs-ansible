@@ -18,12 +18,6 @@ file "#{SOURCES_DIRECTORY}/sources.list" do
   action :create
 end
 
-execute "update package index" do
-  command "apt-get update"
-  ignore_failure true
-  action :nothing
-end.run_action(:run)
-
 #FFMPEGS PACKAGES
 %w{
   libavcodec-dev
@@ -35,7 +29,7 @@ end.run_action(:run)
   libswscale-dev
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -47,7 +41,7 @@ end
   libsuitesparse-dev
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -58,7 +52,7 @@ end
   python-pip
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -68,7 +62,7 @@ end
   mysql-common
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -154,6 +148,6 @@ end
   xvfb
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
