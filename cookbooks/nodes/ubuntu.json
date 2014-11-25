@@ -5,228 +5,6 @@
 
     ]
   },
-  "default": {
-    "apt": {
-      "cacher-client": {
-        "restrict_environment": false
-      },
-      "cacher_dir": "/var/cache/apt-cacher-ng",
-      "cacher_interface": null,
-      "cacher_port": 3142,
-      "caching_server": false,
-      "compiletime": false,
-      "compile_time_update": false,
-      "key_proxy": "",
-      "cache_bypass": {
-      },
-      "periodic_update_min_delay": 86400,
-      "launchpad_api_version": "1.0",
-      "unattended_upgrades": {
-        "enable": false,
-        "update_package_lists": true,
-        "allowed_origins": [
-          "Ubuntu trusty"
-        ],
-        "package_blacklist": [
-
-        ],
-        "auto_fix_interrupted_dpkg": false,
-        "minimal_steps": false,
-        "install_on_shutdown": false,
-        "mail": null,
-        "mail_only_on_error": true,
-        "remove_unused_dependencies": false,
-        "automatic_reboot": false,
-        "dl_limit": null
-      }
-    },
-    "build-essential": {
-      "compile_time": false
-    },
-    "chef_handler": {
-      "root_user": "root",
-      "root_group": "root",
-      "handler_path": "/home/user/.chef/local-mode-cache/handlers"
-    },
-    "windows": {
-      "allow_pending_reboots": true,
-      "allow_reboot_on_failure": false,
-      "rubyzipversion": null,
-      "reboot_timeout": 60
-    },
-    "yum": {
-      "main": {
-        "cachedir": "/var/cache/yum/$basearch/$releasever",
-        "distroverpkg": "ubuntu-release",
-        "alwaysprompt": null,
-        "assumeyes": null,
-        "bandwidth": null,
-        "bugtracker_url": null,
-        "clean_requirements_on_remove": null,
-        "color": null,
-        "color_list_available_downgrade": null,
-        "color_list_available_install": null,
-        "color_list_available_reinstall": null,
-        "color_list_available_upgrade": null,
-        "color_list_installed_extra": null,
-        "color_list_installed_newer": null,
-        "color_list_installed_older": null,
-        "color_list_installed_reinstall": null,
-        "color_search_match": null,
-        "color_update_installed": null,
-        "color_update_local": null,
-        "color_update_remote": null,
-        "commands": null,
-        "debuglevel": null,
-        "diskspacecheck": null,
-        "enable_group_conditionals": null,
-        "errorlevel": null,
-        "exactarch": null,
-        "exclude": null,
-        "gpgcheck": true,
-        "group_package_types": null,
-        "groupremove_leaf_only": null,
-        "history_list_view": null,
-        "history_record": null,
-        "history_record_packages": null,
-        "http_caching": null,
-        "installonly_limit": null,
-        "installonlypkgs": null,
-        "installroot": null,
-        "keepalive": null,
-        "keepcache": false,
-        "kernelpkgnames": null,
-        "localpkg_gpgcheck": null,
-        "logfile": "/var/log/yum.log",
-        "max_retries": null,
-        "mdpolicy": null,
-        "metadata_expire": null,
-        "mirrorlist_expire": null,
-        "multilib_policy": null,
-        "obsoletes": null,
-        "overwrite_groups": null,
-        "password": null,
-        "path": "/etc/yum.conf",
-        "persistdir": null,
-        "pluginconfpath": null,
-        "pluginpath": null,
-        "plugins": null,
-        "protected_multilib": null,
-        "protected_packages": null,
-        "proxy": null,
-        "proxy_password": null,
-        "proxy_username": null,
-        "recent": null,
-        "releasever": null,
-        "repo_gpgcheck": null,
-        "reset_nice": null,
-        "rpmverbosity": null,
-        "showdupesfromrepos": null,
-        "skip_broken": null,
-        "ssl_check_cert_permissions": null,
-        "sslcacert": null,
-        "sslclientcert": null,
-        "sslclientkey": null,
-        "sslverify": null,
-        "syslog_device": null,
-        "syslog_facility": null,
-        "syslog_ident": null,
-        "throttle": null,
-        "timeout": null,
-        "tolerant": false,
-        "tsflags": null,
-        "username": null
-      },
-      "epel-debuginfo": {
-        "repositoryid": "epel-debuginfo",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": false,
-        "managed": false
-      },
-      "epel-source": {
-        "repositoryid": "epel-source",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": false,
-        "managed": false
-      },
-      "epel-testing-debuginfo": {
-        "repositoryid": "epel-testing-debuginfo",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": false,
-        "managed": false
-      },
-      "epel-testing-source": {
-        "repositoryid": "epel-testing-source",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": false,
-        "managed": false
-      },
-      "epel-testing": {
-        "repositoryid": "epel-testing",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": false,
-        "managed": false
-      },
-      "epel": {
-        "repositoryid": "epel",
-        "failovermethod": "priority",
-        "gpgcheck": true,
-        "enabled": true,
-        "managed": true
-      }
-    },
-    "yum-epel": {
-      "repositories": [
-        "epel",
-        "epel-debuginfo",
-        "epel-source",
-        "epel-testing",
-        "epel-testing-debuginfo",
-        "epel-testing-source"
-      ]
-    },
-    "python": {
-      "install_method": "package",
-      "prefix_dir": "/usr",
-      "binary": "/usr/bin/python",
-      "url": "http://www.python.org/ftp/python",
-      "version": "2.7.5",
-      "checksum": "3b477554864e616a041ee4d7cef9849751770bc7c39adaf78a94ea145c488059",
-      "configure_options": [
-        "--prefix=/usr"
-      ],
-      "make_options": [
-        "install"
-      ],
-      "pip_location": "/usr/bin/pip",
-      "virtualenv_location": "/usr/bin/virtualenv",
-      "setuptools_version": null,
-      "virtualenv_version": null
-    },
-    "opencv": {
-      "install_method": "package",
-      "repository": "ppa",
-      "package": {
-        "version": "2.4"
-      },
-      "repository_ppa": "stable",
-      "source": {
-        "url": "http://kent.dl.sourceforge.net/project/opencvlibrary/opencv-unix/2.4.9/opencv-2.4.9.zip",
-        "checksum": "7f958389e71c77abdf5efe1da988b80c",
-        "force_recompile": false,
-        "cmake_define": {
-          "MAKE_BUILD_TYPE": "RELEASE",
-          "MAKE_INSTALL_PREFIX": "/usr/local",
-          "BUILD_NEW_PYTHON_SUPPORT": "ON"
-        }
-      }
-    }
-  },
   "automatic": {
     "languages": {
       "java": {
@@ -276,13 +54,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "19478204",
-        "kb_used": "8087964",
-        "kb_available": "10377760",
+        "kb_used": "8087100",
+        "kb_available": "10378624",
         "percent_used": "44%",
         "mount": "/",
         "total_inodes": "1245184",
-        "inodes_used": "303503",
-        "inodes_available": "941681",
+        "inodes_used": "303342",
+        "inodes_available": "941842",
         "inodes_percent_used": "25%",
         "fs_type": "ext4",
         "mount_options": [
@@ -807,28 +585,28 @@
     },
     "memory": {
       "swap": {
-        "cached": "4524kB",
+        "cached": "10832kB",
         "total": "1046524kB",
-        "free": "383056kB"
+        "free": "397108kB"
       },
       "total": "1010464kB",
-      "free": "73864kB",
-      "buffers": "5084kB",
-      "cached": "193392kB",
-      "active": "314344kB",
-      "inactive": "438204kB",
-      "dirty": "88kB",
+      "free": "82088kB",
+      "buffers": "3864kB",
+      "cached": "170436kB",
+      "active": "380936kB",
+      "inactive": "362072kB",
+      "dirty": "72kB",
       "writeback": "0kB",
-      "anon_pages": "549636kB",
-      "mapped": "86324kB",
-      "slab": "66252kB",
-      "slab_reclaimable": "33156kB",
-      "slab_unreclaim": "33096kB",
-      "page_tables": "33308kB",
+      "anon_pages": "557976kB",
+      "mapped": "126636kB",
+      "slab": "67692kB",
+      "slab_reclaimable": "34656kB",
+      "slab_unreclaim": "33036kB",
+      "page_tables": "33296kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "1551756kB",
-      "committed_as": "4270832kB",
+      "committed_as": "4264620kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "168040kB",
       "vmalloc_chunk": "34359547512kB"
@@ -923,15 +701,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "14370111",
-              "packets": "12085",
+              "bytes": "13053422",
+              "packets": "9934",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "14370111",
-              "packets": "12085",
+              "bytes": "13053422",
+              "packets": "9934",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -941,16 +719,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "22799768",
-              "packets": "330553",
+              "bytes": "22794777",
+              "packets": "330515",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1010588639",
-              "packets": "679712",
+              "bytes": "1010577681",
+              "packets": "679660",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -973,11 +751,11 @@
       }
     },
     "cloud_v2": null,
-    "uptime_seconds": 19229,
-    "uptime": "5 hours 20 minutes 29 seconds",
-    "idletime_seconds": 16445,
-    "idletime": "4 hours 34 minutes 05 seconds",
-    "ohai_time": 1416889748.2895243,
+    "uptime_seconds": 18860,
+    "uptime": "5 hours 14 minutes 20 seconds",
+    "idletime_seconds": 16114,
+    "idletime": "4 hours 28 minutes 34 seconds",
+    "ohai_time": 1416889379.0882196,
     "command": {
       "ps": "ps -ef"
     },
@@ -3704,25 +3482,10 @@
     "fqdn": "ubuntu",
     "domain": null,
     "recipes": [
-      "setup",
-      "linux",
-      "opencv",
-      "setup::default",
-      "linux::default",
-      "linux::essentials",
-      "linux::packages",
-      "opencv::default",
-      "opencv::install",
-      "opencv::install_package",
-      "opencv::repository"
+
     ],
     "roles": [
 
     ]
-  },
-  "run_list": [
-    "recipe[setup]",
-    "recipe[linux]",
-    "recipe[opencv]"
-  ]
+  }
 }
