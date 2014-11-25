@@ -12,8 +12,8 @@ chef_gem 'rubyzip' do
   action :install
 end
 
-execute "install cookbooks and dependencies" do
-  command "berks install"
+execute 'berks-vendor' do
+  command "cd ~/chef-repo/cookbooks/linux && berks vendor"
   action :run
 end
 

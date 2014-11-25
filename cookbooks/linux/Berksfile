@@ -2,4 +2,4 @@ source "https://supermarket.getchef.com"
 
 metadata
 
-cookbook "opencv"
+cookbook 'opencv', '~> 0.0.6'
