@@ -11,9 +11,6 @@
 SOURCES_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
 
 file "#{SOURCES_DIRECTORY}/sources.list" do
-  owner 'root'
-  group 'root'
-  mode 0755
   content ::File.open("/etc/apt/sources.list").read
   action :create
 end

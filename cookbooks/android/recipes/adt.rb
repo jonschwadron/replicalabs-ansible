@@ -15,29 +15,12 @@ EXTRACT_PATH = "#{ANDROID_DIRECTORY}/#{SRC_FILE}"
 SRC_DIRECTORY = "#{ANDROID_DIRECTORY}/adt-bundle-linux-x86_64-20140321"
 
 directory "#{ANDROID_DIRECTORY}" do
-  owner 'root'
-  group 'root'
-  mode 0755
   action :create
 end
 
 remote_file "#{ANDROID_DIRECTORY}/#{SRC_FILE}" do
   source "#{SRC_LINK}"
   not_if { ::File.exists?(EXTRACT_PATH) }
-
-android_directory = File.join(Dir.home, "android")
-src_file = "adt-bundle-linux-x86_64-20140321.zip"
-src_link = "http://dl.google.com/android/adt/22.6.2/adt-bundle-linux-x86_64-20140321.zip"
-extract_path = "#{android_directory}/#{src_file}"
-src_directory = "#{android_directory}/adt-bundle-linux-x86_64-20140321"
-
-directory "#{android_directory}" do
-  action :create
-end
-
-remote_file "#{android_directory}/#{src_file}" do
-  source "#{src_link}"
-  not_if { ::File.exists?(extract_path) }
 end
 
 ruby_block "unzip" do
@@ -54,9 +37,5 @@ ruby_block "unzip" do
       end
     end
     unzip_file("#{EXTRACT_PATH}", "#{ANDROID_DIRECTORY}")
-  end
-  not_if { ::File.exists?(SRC_DIRECTORY) }
-  unzip_file("#{extract_path}", "#{android_directory}")
-  end
-  not_if { ::File.exists?(src_directory) }
+    not_if { ::File.exists?(SRC_DIRECTORY) }
 end
