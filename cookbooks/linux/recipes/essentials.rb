@@ -8,6 +8,8 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
+BERKS_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/berks-cookbooks")
+
 chef_gem 'rubyzip' do
   action :install
 end
@@ -15,17 +17,5 @@ end
 execute 'berks-vendor' do
   command "cd ~/chef-repo/cookbooks/linux && berks vendor"
   action :run
+  not_if { ::File.exists?(BERKS_DIRECTORY) }
 end
-
-
-=begin
-execute "Generate a Berksfile in a pre-existing cookbook"
-  command "berks init ."
-  action :run
-end
-
-execute "install berkshelf" do
-  command "cookbook 'opencv', '~> 0.0.6'"
-  action :run
-end
-=end

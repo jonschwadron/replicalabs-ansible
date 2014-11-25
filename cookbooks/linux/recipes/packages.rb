@@ -8,9 +8,9 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
-SOURCE_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
+SOURCES_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
 
-file "#{SOURCE_DIRECTORY}/sources.list" do
+file "#{SOURCES_DIRECTORY}/sources.list" do
   owner 'root'
   group 'root'
   mode 0755
@@ -157,7 +157,3 @@ end
     action :install
   end
 end
-
-#the following packages does not work:
-#libpcl-all
-#libpcl-bin
