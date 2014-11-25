@@ -11,3 +11,21 @@
 chef_gem 'rubyzip' do
   action :install
 end
+
+execute "install cookbooks and dependencies" do
+  command "berks install"
+  action :run
+end
+
+
+=begin
+execute "Generate a Berksfile in a pre-existing cookbook"
+  command "berks init ."
+  action :run
+end
+
+execute "install berkshelf" do
+  command "cookbook 'opencv', '~> 0.0.6'"
+  action :run
+end
+=end
