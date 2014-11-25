@@ -10,7 +10,6 @@
 
 SOURCE_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
 
-=begin
 file "#{SOURCE_DIRECTORY}/sources.list" do
   owner 'root'
   group 'root'
@@ -18,7 +17,6 @@ file "#{SOURCE_DIRECTORY}/sources.list" do
   content ::File.open("/etc/apt/sources.list").read
   action :create
 end
-=end
 
 execute "update package index" do
   command "apt-get update"
