@@ -23,6 +23,9 @@ git clone [url] chef-repo
 
 ## Add the following cookbook paths to knife.rb ##
 ```
+mkdir .chef
+```
+```
 echo "cookbook_path ['~/chef-repo/cookbooks', '~/chef-repo/berkshelf']
 chef_repo_path ['~/chef-repo']" > ~/.chef/knife.rb
 ```
