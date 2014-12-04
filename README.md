@@ -29,6 +29,5 @@ chef_repo_path ['~/chef-repo']" > ~/.chef/knife.rb
 
 ## Run the following command to start the setup ##
 ```
-cd chef-repo
 sudo chef-client -z
 ```
