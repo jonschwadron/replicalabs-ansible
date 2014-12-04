@@ -21,8 +21,13 @@ sudo dpkg -i chefdk_0.3.5-1_amd64.deb
 git clone [url] chef-repo
 ```
 
+## Add cookbook_path to knife.rb ##
+```
+echo "cookbook_path ['~/chef-repo/cookbooks', '~/chef-repo/berkshelf']" > ~/.chef/knife.rb
+```
+
 ## Run the following command to start the setup ##
 ```
 cd chef-repo
-sudo chef-client --local-mode --runlist 'recipe[setup]'
+sudo chef-client -z
 ```
