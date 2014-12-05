@@ -9,27 +9,24 @@
 # All rights reserved - Do Not Redistribute
 
 CERES_DIRECTORY = File.join(Dir.home, "ceres-solver")
-#CERES_BUILD_DIRECTORY = File.join(Dir.home, "ceres-solver/build")
+
+%W[ #{CERES_DIRECTORY} #{CERES_DIRECTORY}/build ].each do |path|
+  directory path do
+    owner 'root'
+    group 'root'
+    mode '0755'
+  end
+end
 
 git "#{CERES_DIRECTORY}" do
   repository "https://ceres-solver.googlesource.com/ceres-solver"
   revision '1.8.0'
   action :sync
-  not_if { ::File.exists?(CERES_DIRECTORY) }
-end
-
-directory "#{CERES_DIRECTORY}" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
 end
 
 bash 'install ceres-solver' do
-  cwd "#{CERES_DIRECTORY}"
+  cwd "#{CERES_DIRECTORY}/build"
   code <<-EOH
-    mkdir -p build &&
-    cd build &&
     cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON &&
     make -j4 install
   EOH

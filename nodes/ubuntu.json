@@ -495,15 +495,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1835175",
-              "packets": "4706",
+              "bytes": "4998610",
+              "packets": "5852",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1835175",
-              "packets": "4706",
+              "bytes": "4998610",
+              "packets": "5852",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -513,16 +513,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "21251665",
-              "packets": "345598",
+              "bytes": "21974364",
+              "packets": "353688",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1081263816",
-              "packets": "722809",
+              "bytes": "1101230389",
+              "packets": "738379",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1192,13 +1192,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "17413948",
-        "kb_used": "8496280",
-        "kb_available": "8010048",
+        "kb_used": "8558056",
+        "kb_available": "7948272",
         "percent_used": "52%",
         "mount": "/",
         "total_inodes": "1114112",
-        "inodes_used": "315016",
-        "inodes_available": "799096",
+        "inodes_used": "316624",
+        "inodes_available": "797488",
         "inodes_percent_used": "29%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1208,13 +1208,13 @@
       },
       "none": {
         "kb_size": "102400",
-        "kb_used": "84",
-        "kb_available": "102316",
+        "kb_used": "88",
+        "kb_available": "102312",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "384355",
-        "inodes_used": "37",
-        "inodes_available": "384318",
+        "inodes_used": "38",
+        "inodes_available": "384317",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -1348,28 +1348,28 @@
     },
     "memory": {
       "swap": {
-        "cached": "1268kB",
+        "cached": "2736kB",
         "total": "3143676kB",
-        "free": "3089312kB"
+        "free": "3085432kB"
       },
       "total": "3074844kB",
-      "free": "1304756kB",
-      "buffers": "31408kB",
-      "cached": "655440kB",
-      "active": "718984kB",
-      "inactive": "786828kB",
-      "dirty": "60kB",
+      "free": "1317384kB",
+      "buffers": "25180kB",
+      "cached": "639968kB",
+      "active": "630348kB",
+      "inactive": "865228kB",
+      "dirty": "76kB",
       "writeback": "0kB",
-      "anon_pages": "817744kB",
-      "mapped": "69820kB",
-      "slab": "144096kB",
-      "slab_reclaimable": "109096kB",
-      "slab_unreclaim": "35000kB",
-      "page_tables": "29884kB",
+      "anon_pages": "827908kB",
+      "mapped": "70640kB",
+      "slab": "141792kB",
+      "slab_reclaimable": "106704kB",
+      "slab_unreclaim": "35088kB",
+      "page_tables": "30024kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "4681096kB",
-      "committed_as": "3734480kB",
+      "committed_as": "4065932kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "174136kB",
       "vmalloc_chunk": "34359551540kB"
@@ -1516,10 +1516,10 @@
         "chef_root": "/opt/chefdk/embedded/apps/chef/lib"
       }
     },
-    "uptime_seconds": 5296,
-    "uptime": "1 hours 28 minutes 16 seconds",
-    "idletime_seconds": 2051,
-    "idletime": "34 minutes 11 seconds",
+    "uptime_seconds": 8586,
+    "uptime": "2 hours 23 minutes 06 seconds",
+    "idletime_seconds": 4675,
+    "idletime": "1 hours 17 minutes 55 seconds",
     "cloud_v2": null,
     "dmi": {
       "dmidecode_version": "2.12",
@@ -3715,7 +3715,7 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1417775707.652623,
+    "ohai_time": 1417778998.344212,
     "init_package": "init",
     "recipes": [
       "chef_resource_merging",
