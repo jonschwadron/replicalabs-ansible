@@ -11,18 +11,18 @@
 CERES_DIRECTORY = File.join(Dir.home, "ceres-solver")
 #CERES_BUILD_DIRECTORY = File.join(Dir.home, "ceres-solver/build")
 
-directory "#{CERES_DIRECTORY}" do
-  owner 'root'
-  group 'root'
-  mode '0755'
-  action :create
-end
-
 git "#{CERES_DIRECTORY}" do
   repository "https://ceres-solver.googlesource.com/ceres-solver"
   revision '1.8.0'
   action :sync
   not_if { ::File.exists?(CERES_DIRECTORY) }
+end
+
+directory "#{CERES_DIRECTORY}" do
+  owner 'root'
+  group 'root'
+  mode '0755'
+  action :create
 end
 
 bash 'install ceres-solver' do
