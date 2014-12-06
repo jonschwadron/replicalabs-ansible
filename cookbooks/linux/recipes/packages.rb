@@ -8,12 +8,14 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
+=begin
 SOURCES_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
 
 file "#{SOURCES_DIRECTORY}/sources.list" do
   content ::File.open("/etc/apt/sources.list").read
   action :create
 end
+=end
 
 execute "update package index" do
   command "apt-get update"

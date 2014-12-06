@@ -8,6 +8,12 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
+#Install rubyzip gem into chef
 chef_gem 'rubyzip' do
   action :install
+end
+
+# Install sshkey gem into chef
+chef_gem 'sshkey' do
+	action :install
 end

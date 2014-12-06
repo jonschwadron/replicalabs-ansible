@@ -393,7 +393,7 @@
             "00:0C:29:DF:8E:9E": {
               "family": "lladdr"
             },
-            "192.168.110.130": {
+            "192.168.110.132": {
               "family": "inet",
               "prefixlen": "24",
               "netmask": "255.255.255.0",
@@ -424,7 +424,7 @@
               "scope": "link",
               "metric": "1",
               "proto": "kernel",
-              "src": "192.168.110.130"
+              "src": "192.168.110.132"
             },
             {
               "destination": "fe80::/64",
@@ -443,15 +443,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1249279",
-              "packets": "4397",
+              "bytes": "3774388",
+              "packets": "5524",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1249279",
-              "packets": "4397",
+              "bytes": "3774388",
+              "packets": "5524",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -461,16 +461,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "19544115",
-              "packets": "318252",
+              "bytes": "20179994",
+              "packets": "326269",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1006276732",
-              "packets": "675819",
+              "bytes": "1014006053",
+              "packets": "677827",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -479,7 +479,7 @@
         }
       }
     },
-    "ipaddress": "192.168.110.130",
+    "ipaddress": "192.168.110.132",
     "macaddress": "00:0C:29:DF:8E:9E",
     "etc": {
       "passwd": {
@@ -1127,9 +1127,9 @@
     "current_user": "jonschwadron",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDAX0jxlkig4TAT5BI7w10/Zw9EuFcUCm/WI/3YLLxgugNXuZFZ5FhpSqM4qsBcF4uYqoveDVVOfjK08PkbXrAGZitIPsqHzY4uQ0KxTzOEu3vQP+Pv6+LdXGS+lhDlBqMBWe6muD8ZCy0fxn517Ti+SSlj4lgOIOTTFs44FW6C9VduLjlxpyHh2OKEX7+1GPfyXMQoJIhH98k0egJCnNYnv8NB9L5BZEjiXlynsL6KWEs0qitvLi/CXsJHz3HsjhgsQq33EKhDK6i5//3XNnwc9aZGHTGUq0ynJGHzViFDik6MuN//6W+xDGb1KL2l/k1ZRGCuUM8eMy0z8pOBOlvb",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAM7F0Ri3fKgwq04GE8k8j0SVjEQcsKdAQ/YwAx8BUgCWB89XbJF7r45jB3isW2bxDUR7VjAWSQ43+32LeFHzn0EolaKMD+bdHLP3NlmyItp+X2lCYAO8c4ZzWERXpQTONd8cnS2MhPDEsFA31dLb+kLbVXBlVYRuktPDgZe7eKBrAAAAFQC0boOOX7VTwyOqMQIL8zHpNl4l9QAAAIEAnzJcI6MSCu18JhsiKLmOgo3Hde0Zeg7r5/sxoHT6WL8IB6Gj0eK2erQ27lyTsYuCKPvJFKNymDSqvODwMCeMEouS8t8h5pyuyH2cDhvg2xnKNXNYRdxJFXgPEkJUvpNVKc8t7+T1I5q+9noNoGbmgisqE10lR1DLLvHTzyLmtGkAAACAIn3PB90+wR8YFwYYQhO5eozsTdnMoU1nb/VAkupLJApWDhGdYwu05SO3HT+VihhU9mXr4OSDWz/wMdH9BmpQxUSKLOMnA294Rl+iHKjfma1DDV/upFU9/CmiYu12yd2BWEIpnvQzFKDr4VNPaknJqhZJ56Xd1asgZaF6lMZWkOM=",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBoHDeoSVrakxyUPnuPzOvn4Foai3C7IWvaUXzNFipALlHTXASI5t9bRXzASc3oMr2PtTDEWfYRCb0oi6Xri6JA=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC/zZ0NUxDz9JbBq7jHOdCG7otOUlyZHT5rgdRDFLOnRt8iJbQaw044JIn/W1kgspRyLtRiaJLNP+76oFQS9Uc0fMdv+8k3Bs1zabxnNyMq5XF3RmgzxAUPM5nTU+QcrYfX+1zsxofMxkohCI8RH/7mBYeV+4Wi8k6WOWK6hYiHPBklKzbW7JSzQZA+BspGwWV6xIfPSvp6inZBtDDu7pCOQaVm9xiUaE7XGU9o2nTi6ixKxCCbCMAn/AoXrTBX04FGUm800/LAjxk+qcgGWWmQGYf0TuaAfKReejfUKG8OkSEF5TD1kqflAvNsK9bkxgWGLfrYIKYXvAerl/s9mShD",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAPW26xnC2ehwW2IDHyfhTvb5qej/usIREjSyiNjw0GboaDx9OLWQunVsrUMqTlygIGdKG1muAiniX3ygjMLLCZ+RVEmdYD4Cd3lO45XtapTo8+ox4jMgjBUUWb9Gh1dlc10+PlDEyegs6cIQWaC7q//mYtg4cTiVujxJkABdkFTRAAAAFQC4/eGqUMGB7MQqSQMY40LfQYXQKwAAAIEA6EMJYQUXjL0VqoPSKPv1nQIeoAhCBKHs0tmqJ5080+e569QYzqfJykJAQEcGlns77NAO3hqM8a/fwxY/5I8AqjxoNxYiz3vDR+CdbRoPrnBV5WJDiJo3j44xLpjctnoMKCTc5fTsezdbqgTS3R6GXeXK1NPSbaD1unOutjCKXYUAAACAf8XdIBzlVyn7TtL50XLLzFtjL3s8iSrmgHupnJR5FKmg9FqsYyk+yVKQXreZW5cOusNXINhFFC2Qpb/Q1O+TGYdSI2cMmhwmvaYxMGRKHdPnKKRpzyJUr0Snzs4G5fNWEsKHF775EX1RkbQAudwZIsQ24ehxhNf3Kor8kSzHomI=",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBJTiRyEh1I9NXtbEd+BCkzIqMSimZXMpEdaZPy/mDbASOoHy/sjkN+/ct7youeran6YuARbahyE6TV0vOy9AtW0=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
@@ -1140,13 +1140,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "17413948",
-        "kb_used": "7997536",
-        "kb_available": "8508792",
-        "percent_used": "49%",
+        "kb_used": "10677744",
+        "kb_available": "5828584",
+        "percent_used": "65%",
         "mount": "/",
         "total_inodes": "1114112",
-        "inodes_used": "285124",
-        "inodes_available": "828988",
+        "inodes_used": "287282",
+        "inodes_available": "826830",
         "inodes_percent_used": "26%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1156,13 +1156,13 @@
       },
       "none": {
         "kb_size": "102400",
-        "kb_used": "92",
-        "kb_available": "102308",
+        "kb_used": "88",
+        "kb_available": "102312",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "384355",
-        "inodes_used": "39",
-        "inodes_available": "384316",
+        "inodes_used": "38",
+        "inodes_available": "384317",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -1296,31 +1296,31 @@
     },
     "memory": {
       "swap": {
-        "cached": "1460kB",
+        "cached": "3392kB",
         "total": "3143676kB",
-        "free": "3101108kB"
+        "free": "3084484kB"
       },
       "total": "3074844kB",
-      "free": "1672452kB",
-      "buffers": "27420kB",
-      "cached": "293552kB",
-      "active": "491548kB",
-      "inactive": "665752kB",
-      "dirty": "64kB",
+      "free": "1355484kB",
+      "buffers": "6644kB",
+      "cached": "705556kB",
+      "active": "613656kB",
+      "inactive": "859360kB",
+      "dirty": "344kB",
       "writeback": "0kB",
-      "anon_pages": "835044kB",
-      "mapped": "63072kB",
-      "slab": "125752kB",
-      "slab_reclaimable": "92204kB",
-      "slab_unreclaim": "33548kB",
-      "page_tables": "30124kB",
+      "anon_pages": "757672kB",
+      "mapped": "102272kB",
+      "slab": "138812kB",
+      "slab_reclaimable": "104208kB",
+      "slab_unreclaim": "34604kB",
+      "page_tables": "30076kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "4681096kB",
-      "committed_as": "3707648kB",
+      "committed_as": "4649324kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "168212kB",
-      "vmalloc_chunk": "34359551540kB"
+      "vmalloc_used": "168260kB",
+      "vmalloc_chunk": "34359546920kB"
     },
     "ip6address": "fe80::20c:29ff:fedf:8e9e",
     "virtualization": {
@@ -1464,10 +1464,10 @@
         "chef_root": "/opt/chefdk/embedded/apps/chef/lib"
       }
     },
-    "uptime_seconds": 5789,
-    "uptime": "1 hours 36 minutes 29 seconds",
-    "idletime_seconds": 3011,
-    "idletime": "50 minutes 11 seconds",
+    "uptime_seconds": 10222,
+    "uptime": "2 hours 50 minutes 22 seconds",
+    "idletime_seconds": 4290,
+    "idletime": "1 hours 11 minutes 30 seconds",
     "cloud_v2": null,
     "dmi": {
       "dmidecode_version": "2.12",
@@ -3663,13 +3663,14 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1417831787.2595997,
+    "ohai_time": 1417863997.1689126,
     "init_package": "init",
     "recipes": [
       "chef_resource_merging",
       "setup",
       "linux::essentials",
       "linux::packages",
+      "linux::sshkey",
       "opencv::install",
       "opencv::install_source",
       "linux::ceres",
@@ -3688,6 +3689,7 @@
     "recipe[setup]",
     "recipe[linux::essentials]",
     "recipe[linux::packages]",
+    "recipe[linux::sshkey]",
     "recipe[opencv::install]",
     "recipe[opencv::install_source]",
     "recipe[linux::ceres]"
