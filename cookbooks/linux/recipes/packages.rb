@@ -32,7 +32,7 @@ end.run_action(:run)
   libswscale-dev
 }.each do |pkg|
   apt_package pkg do
-    action :upgrade
+    action :install
   end
 end
 
@@ -44,7 +44,7 @@ end
   libsuitesparse-dev
 }.each do |pkg|
   apt_package pkg do
-    action :upgrade
+    action :install
   end
 end
 
@@ -55,7 +55,7 @@ end
   python-pip
 }.each do |pkg|
   apt_package pkg do
-    action :upgrade
+    action :install
   end
 end
 
@@ -65,7 +65,7 @@ end
   mysql-common
 }.each do |pkg|
   apt_package pkg do
-    action :upgrade
+    action :install
   end
 end
 
@@ -151,6 +151,6 @@ end
   xvfb
 }.each do |pkg|
   apt_package pkg do
-    action :upgrade
+    action :install
   end
 end
