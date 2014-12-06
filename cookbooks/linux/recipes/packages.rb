@@ -8,14 +8,13 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
-=begin
 SOURCES_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
 
-file "#{SOURCES_DIRECTORY}/sources.list" do
-  content ::File.open("/etc/apt/sources.list").read
+#replace sources.list
+file "/etc/apt/sources.list" do
+  content ::File.open("#{SOURCES_DIRECTORY}/sources.list").read
   action :create
 end
-=end
 
 execute "update package index" do
   command "apt-get update"
@@ -34,7 +33,7 @@ end.run_action(:run)
   libswscale-dev
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -46,7 +45,7 @@ end
   libsuitesparse-dev
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -57,7 +56,7 @@ end
   python-pip
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -67,7 +66,7 @@ end
   mysql-common
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
 
@@ -141,7 +140,6 @@ end
   mercurial
   meshlab
   nvidia-cuda-toolkit
-  nvidia-current-dev
   nvidia-profiler
   nvidia-visual-profiler
   openssh-client
@@ -153,6 +151,8 @@ end
   xvfb
 }.each do |pkg|
   apt_package pkg do
-    action :install
+    action :upgrade
   end
 end
+
+#nvidia-current-dev

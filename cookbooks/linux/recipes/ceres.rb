@@ -20,7 +20,7 @@ end
   directory path do
     owner 'root'
     group 'root'
-    mode '0755'
+    mode 0755
   end
 end
 
