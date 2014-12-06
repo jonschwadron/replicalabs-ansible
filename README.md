@@ -3,10 +3,13 @@
 ## To-do: ##
 Rewrite recipes for the following cookbooks:
 
-*  `linux`
 *  `replicalabs::repo`
 *  `optimus`
 
+Rewrite recipes for the following cookbooks:
+
+*  `create an installation script that will perform the commands below.`
+*  `create an update script that will check/perform updates.`
 
 ## Install Chef ##
 ```
