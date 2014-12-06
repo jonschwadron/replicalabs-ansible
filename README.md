@@ -1,6 +1,6 @@
 # Replica Labs Setup with Chef #
 
-Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
+Make sure the virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
 ## To-do: ##
 Rewrite recipes for the following cookbooks:
@@ -38,25 +38,4 @@ chef_repo_path ['~/chef-repo']" > ~/.chef/knife.rb
 ## Start the setup ##
 ```
 sudo chef-client -z
-```
-
-## Unity fix ##
-If Unity (Ubuntu's user interface) does not load after you restart Ubuntu, do the following fix:
-
-Press `ctrl + alt + f2` to open terminal
-
-```
-sudo apt-get update
-```
-```
-sudo apt-get install --reinstall ubuntu-desktop
-```
-```
-sudo apt-get install unity
-```
-```
-sudo apt-get remove --purge nvidia*
-```
-```
-sudo shutdown -r now
 ```
