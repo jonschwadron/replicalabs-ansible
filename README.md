@@ -11,6 +11,8 @@ Rewrite recipes for the following cookbooks:
 *  `create an installation script that will perform the commands below.`
 *  `create an update script that will check/perform updates.`
 
+Note: Ubuntu breaks after installing apt_packages. Unity disappears the next time you restart ubuntu and login.  
+
 ## Install Chef ##
 ```
 wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.5-1_amd64.deb
