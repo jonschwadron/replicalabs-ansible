@@ -1,5 +1,7 @@
 # Replica Labs Setup with Chef #
 
+Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
+
 ## To-do: ##
 Rewrite recipes for the following cookbooks:
 
