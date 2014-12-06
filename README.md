@@ -11,7 +11,7 @@ Rewrite recipes for the following cookbooks:
 *  `create an installation script that will perform the commands below.`
 *  `create an update script that will check/perform updates.`
 
-Note: Unity (ubuntu's use interface) breaks after installing apt_packages. It does not load after you restart ubuntu and login.  
+Note: Unity (Ubuntu's user interface) breaks after installing apt_packages. It does not load after you restart ubuntu and login. Will look into this. 
 
 ## Install Chef ##
 ```
