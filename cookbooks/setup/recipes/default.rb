@@ -7,33 +7,74 @@
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
+  
+require 'etc'
 
-#Display messages with spinner
+def message_start
+  
+  line = Hash.new
+  line[1] = "Starting Replica Labs setup..."
+  
+  chars = %w[| / - \\ ] 
+
+  fps=25
+  delay = 1.0/fps
+
+  for i in 1..line.size do
+    for j in 1..line[i].length do
+      print line[i][((j+=1)-2) % line[i].length]
+      sleep delay
+    end
+    sleep delay*5
+  end
+end
 
 def show_wait_spinner(fps=10)
   chars = %w[| / - \\]
   delay = 1.0/fps
   iter = 0
   spinner = Thread.new do
-    while iter do  # Keep spinning until told otherwise
+    while iter do 
       print chars[(iter+=1) % chars.length]
       sleep delay
       print "\b"
     end
   end
-  yield.tap{       # After yielding to the block, save the return value
-    iter = false   # Tell the thread to exit, cleaning up after itself…
-    spinner.join   # …and wait for it to do so.
-  }                # Use the block's return value as the method's
-
+  yield.tap{
+    iter = false
+    spinner.join
+  }                
 end
 
-print "\n  Welcome to Replica Labs.   "
-show_wait_spinner{
-  sleep rand(4)+2 # Simulate a task taking an unknown amount of time
-}
-print "\n  Go make a sandwich and come back in a little while.   "
-show_wait_spinner{
-  sleep rand(4)+2 # Simulate a task taking an unknown amount of time
-}
-print "\n\n"
+def message_rendor
+
+  name = Etc.getlogin
+  
+  line = Hash.new
+  line[1] = "Rendor: How are you gentleman!!"
+  line[2] = "Rendor: All your base are belong to us."
+  line[3] = "\n", name, ": What you say?!\n"
+  line[4] = "Rendor: I... uh..."
+  line[5] = "Rendor: The setup will take approximately an hour to finish..."
+  line[6] = "Rendor: So why don't you go make a sandwich and come back in a little while..."
+  line[7] = "Rendor: =)"
+
+  fps=25
+  delay = 1.0/fps
+
+  for i in 1..line.size do
+    for j in 1..line[i].length do
+      print line[i][((j+=1)-2) % line[i].length]
+      sleep delay
+    end
+    sleep delay*25
+    print "\n"
+  end
+end
+
+puts "\n"
+message_start
+show_wait_spinner{sleep rand(4)+2}
+puts "\n\n"
+message_rendor
+puts "\n"
