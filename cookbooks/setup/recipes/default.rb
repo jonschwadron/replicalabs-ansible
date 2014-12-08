@@ -14,8 +14,6 @@ def message_start
   
   line = Hash.new
   line[1] = "Starting Replica Labs setup..."
-  
-  chars = %w[| / - \\ ] 
 
   fps=25
   delay = 1.0/fps
@@ -25,39 +23,31 @@ def message_start
       print line[i][((j+=1)-2) % line[i].length]
       sleep delay
     end
-    sleep delay*5
   end
 end
 
-def show_wait_spinner(fps=10)
+def show_wait_cursor(seconds,fps=10)
   chars = %w[| / - \\]
   delay = 1.0/fps
-  iter = 0
-  spinner = Thread.new do
-    while iter do 
-      print chars[(iter+=1) % chars.length]
-      sleep delay
-      print "\b"
-    end
-  end
-  yield.tap{
-    iter = false
-    spinner.join
-  }                
+  (seconds*fps).round.times{ |i|
+    print chars[i % chars.length]
+    sleep delay
+    print "\b"
+  }
 end
 
 def message_rendor
 
-  name = Etc.getlogin
+  login_name = Etc.getlogin
   
   line = Hash.new
   line[1] = "Rendor: How are you gentleman!!"
   line[2] = "Rendor: All your base are belong to us."
-  line[3] = "\n", name, ": What you say?!\n"
+  line[3] = "\n", login_name, ": What you say?!\n"
   line[4] = "Rendor: I... uh..."
   line[5] = "Rendor: The setup will take approximately an hour to finish..."
   line[6] = "Rendor: So why don't you go make a sandwich and come back in a little while..."
-  line[7] = "Rendor: =)"
+  line[7] = "Rendor: Ha Ha Ha Ha =)"
 
   fps=25
   delay = 1.0/fps
@@ -74,7 +64,7 @@ end
 
 puts "\n"
 message_start
-show_wait_spinner{sleep rand(4)+2}
+show_wait_cursor(3)
 puts "\n\n"
 message_rendor
 puts "\n"
