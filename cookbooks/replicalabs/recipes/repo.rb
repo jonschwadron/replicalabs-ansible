@@ -36,38 +36,38 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 
   case repo
 	when "Sohpus"
-	    bash 'Install Sophus' do
-	    	cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  		code <<-EOH
-			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
+	  bash 'Install Sophus' do
+	   	cwd #{SOURCE_DIRECTORY}/#{repo}/build
+			code <<-EOH
+			  make .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
 				make -j4 install
 			EOH
 		end
 
 	when "HAL"
-	  	bash 'Install HAL' do
-	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  		code <<-EOH
-			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
-	    		make -j4 install
+	  bash 'Install HAL' do
+	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
+	  	code <<-EOH
+		  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
+	   		make -j4 install
 			EOH
 		end
 
 	when "Kangaroo"
-	  	bash 'Install Kangaroo' do
-	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  		code <<-EOH
-			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
-	    		make -j4 install
-			EOH
+	  bash 'Install Kangaroo' do
+	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
+	  	code <<-EOH
+		  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
+	   		make -j4 install
+		EOH
 		end
 
 	else
-	  	bash 'Install' do
-	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  		code <<-EOH
-			  	ccmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
-        		make -j4 install
+	  bash 'Install' do
+	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
+	  	code <<-EOH
+		  	ccmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
+     		make -j4 install
 			EOH
 		end
 	end
