@@ -27,6 +27,7 @@ def message_start
 end
 
 def show_wait_cursor(seconds,fps=10)
+
   chars = %w[| / - \\]
   delay = 1.0/fps
   (seconds*fps).round.times{ |i|
@@ -46,10 +47,10 @@ def message_rendor
   line[3] = "\n", login_name, ": What you say?!\n"
   line[4] = "Rendor: I... uh..."
   line[5] = "Rendor: The setup will take approximately an hour to finish..."
-  line[6] = "Rendor: So why don't you go make a sandwich and come back in a little while..."
-  line[7] = "Rendor: Ha Ha Ha Ha =)"
+  line[6] = "Rendor: So why don't you go make a sandwich and come back in a while..."
+  line[7] = "Rendor: =)"
 
-  fps=25
+  fps = 25
   delay = 1.0/fps
 
   for i in 1..line.size do
