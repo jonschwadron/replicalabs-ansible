@@ -24,6 +24,7 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 
   git "#{SOURCE_DIRECTORY}" do
     repository "git@bitbucket.org:replicalabs/#{repo}"
+    revision "master"
     action :sync
   end
   
@@ -34,9 +35,9 @@ SOURCE_DIRECTORY = File.join(Dir.home)
   end
 
   case repo
-
 	when "Sohpus"
 	    bash 'Install Sophus' do
+	    	cwd #{SOURCE_DIRECTORY}/#{repo}/build
 	  		code <<-EOH
 			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
 				make -j4 install
@@ -45,6 +46,7 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 
 	when "HAL"
 	  	bash 'Install HAL' do
+	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
 	  		code <<-EOH
 			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	    		make -j4 install
@@ -53,6 +55,7 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 
 	when "Kangaroo"
 	  	bash 'Install Kangaroo' do
+	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
 	  		code <<-EOH
 			  	cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
 	    		make -j4 install
@@ -61,6 +64,7 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 
 	else
 	  	bash 'Install' do
+	  		cwd #{SOURCE_DIRECTORY}/#{repo}/build
 	  		code <<-EOH
 			  	ccmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
         		make -j4 install
@@ -79,6 +83,7 @@ end
 
   git "#{SOURCE_DIRECTORY}" do
     repository "git@bitbucket.org:replicalabs/#{other_repo}"
+    revision "master"
     action :sync 
   end
 end
