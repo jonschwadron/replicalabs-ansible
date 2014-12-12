@@ -7,3 +7,27 @@
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
+
+require 'etc'
+
+include_recipe 'apt'
+
+apt_repository 'nginx-php' do
+  uri 'ppa:bumblebee/stable'
+end
+
+apt_repository 'nginx-php' do
+  uri 'ppa:ubuntu-x-swat/x-updates'
+end
+
+%w{
+	bumblebee
+	bumblebee-nvidia
+	linux-headers-generic
+	primus
+	primus-libs
+	}.each do |pkg|
+  apt_package pkg do
+    action :install
+  end
+end

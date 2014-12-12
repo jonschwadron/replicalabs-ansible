@@ -9,6 +9,25 @@
 # All rights reserved - Do Not Redistribute
 
 SOURCE_DIRECTORY = File.join(Dir.home)
+username = exec('git config user.name')
+
+%w{
+  meshify-superbuild
+  rendor-android-superbuild
+  Server
+	}.each do |other_repo|	
+
+	git "#{SOURCE_DIRECTORY}" do
+		repository "git@bitbucket.org:replicalabs/#{other_repo}"
+		revision "master"
+		user "#{username}"
+		action :checkout
+	end
+end
+
+=begin
+
+
 
 %w{
 	miniglog
@@ -72,18 +91,4 @@ SOURCE_DIRECTORY = File.join(Dir.home)
 	  end
 	end
 end
-
-%w{
-	iDTAM
-	VideoUploader
-	rendor-02
-	Server
-	meshify
-	}.each do |other_repo|	
-
-		git "#{SOURCE_DIRECTORY}" do
-			repository "git@bitbucket.org:replicalabs/#{other_repo}"
-			revision "master"
-			action :sync 
-		end
-	end
+=end

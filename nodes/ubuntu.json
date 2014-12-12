@@ -3680,7 +3680,8 @@
     "recipe[linux::sshkey]",
     "recipe[opencv::install]",
     "recipe[opencv::install_source]",
-    "recipe[linux::ceres]"
-    "recipe[replicalabs::repo]"
+    "recipe[linux::ceres]",
+    "recipe[replicalabs::repo]",
+    "recipe[optimus::bumblebee]"
   ]
 }

@@ -9,13 +9,10 @@
 # All rights reserved - Do Not Redistribute
 
 ssh_directory = File.join(Dir.home, ".ssh")
-#pkey = File.join(Dir.home, ".ssh/id_rsa")
+pkey = File.join(Dir.home, ".ssh/id_rsa")
 
-# Create ~/.ssh directory
+#create ~/.ssh directory
 directory "#{ssh_directory}" do
-    owner 'root'
-    group 'root'
-    mode 0700
   action :create
 end
 
@@ -29,12 +26,43 @@ sshkey = SSHKey.generate(
   comment: "",
   )
 
-puts "The key's randomart image is:"
-puts sshkey.randomart
-puts "\n"
+#store private key
+file pkey do
+  content sshkey.private_key
+  action :create_if_missing
+end
+
+#store public key
+file "#{pkey}.pub" do
+  content sshkey.ssh_public_key
+  action :create_if_missing
+end
+
+puts "This is your public key:"
+puts "\n\n==================================================="
+puts sshkey.ssh_public_key
+puts "===================================================\n\n"
 
 =begin
 #use below for chef server
+
+# Store private key on disk
+template pkey do
+  source "id_rsa.erb"
+  owner 'root'
+  variables(ssh_private_key: sshkey.private_key)
+  mode 00600
+  action :create_if_missing
+end
+
+# Store public key on disk
+template "#{pkey}.pub" do
+  source "id_rsa.pub.erb"
+  owner 'root'
+  variables(ssh_public_key: sshkey.ssh_public_key)
+  mode 00644
+  action :create_if_missing
+end
 
 # Store private key on disk
 template pkey do

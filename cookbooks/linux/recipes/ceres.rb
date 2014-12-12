@@ -13,14 +13,11 @@ CERES_DIRECTORY = File.join(Dir.home, "ceres-solver")
 git "#{CERES_DIRECTORY}" do
   repository "https://ceres-solver.googlesource.com/ceres-solver"
   revision '1.8.0'
-  action :sync
+  action :checkout
 end
 
 %W[ #{CERES_DIRECTORY} #{CERES_DIRECTORY}/build ].each do |path|
   directory path do
-    owner 'root'
-    group 'root'
-    mode 0755
   end
 end
 
