@@ -8,26 +8,29 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
+#require 'etc'
+#username = Etc.getlogin
+
 SOURCE_DIRECTORY = File.join(Dir.home)
-username = exec('git config user.name')
+
+require 'etc'
+username = Etc.getlogin
 
 %w{
   meshify-superbuild
   rendor-android-superbuild
   Server
-	}.each do |other_repo|	
+    }.each do |other_repo|    
 
-	git "#{SOURCE_DIRECTORY}" do
-		repository "git@bitbucket.org:replicalabs/#{other_repo}"
-		revision "master"
-		user "#{username}"
-		action :checkout
-	end
+    git "#{SOURCE_DIRECTORY}" do
+        repository "git@bitbucket.org:replicalabs/#{other_repo}"
+        revision "master"
+        user "#{username}"
+        action :checkout
+    end
 end
 
 =begin
-
-
 
 %w{
 	miniglog
