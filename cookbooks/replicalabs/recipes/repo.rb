@@ -35,7 +35,7 @@ end
 %w{
 	miniglog
 	GLConsole
-	Sophus
+	SophusW
 	Pangolin
 	Calibu
 	HAL

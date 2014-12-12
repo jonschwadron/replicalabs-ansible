@@ -8,6 +8,8 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
+require 'sshkey'
+
 ssh_directory = File.join(Dir.home, ".ssh")
 pkey = File.join(Dir.home, ".ssh/id_rsa")
 
@@ -20,11 +22,14 @@ puts "\nGenerating public/private rsa key pair."
 
 #ruby generate sshkey
 #documentation: http://www.rubydoc.info/gems/sshkey/1.6.1/frames
-require 'sshkey'
-sshkey = SSHKey.generate(
-  type: 'RSA',
-  comment: "",
-  )
+if File.exists?(pkey)
+  sshkey = SSHKey.new(File.read("#{pkey}"))
+else
+  sshkey = SSHKey.generate(
+    type: 'RSA',
+    comment: "",
+    )
+end
 
 #store private key
 file pkey do
@@ -42,6 +47,8 @@ puts "This is your public key:"
 puts "\n\n==================================================="
 puts sshkey.ssh_public_key
 puts "===================================================\n\n"
+
+
 
 =begin
 #use below for chef server

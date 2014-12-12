@@ -12,6 +12,7 @@ require 'etc'
 
 include_recipe 'apt'
 
+=begin
 apt_repository 'nginx-php' do
   uri 'ppa:bumblebee/stable'
 end
@@ -19,11 +20,11 @@ end
 apt_repository 'nginx-php' do
   uri 'ppa:ubuntu-x-swat/x-updates'
 end
+=end
 
 %w{
 	bumblebee
 	bumblebee-nvidia
-	linux-headers-generic
 	primus
 	primus-libs
 	}.each do |pkg|

@@ -230,13 +230,65 @@
   "automatic": {
     "kernel": {
       "name": "Linux",
-      "release": "3.13.0-40-generic",
-      "version": "#69-Ubuntu SMP Thu Nov 13 17:53:56 UTC 2014",
+      "release": "3.13.0-32-generic",
+      "version": "#57-Ubuntu SMP Tue Jul 15 03:51:08 UTC 2014",
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
-        "hid_generic": {
-          "size": "12548",
+        "btrfs": {
+          "size": "835954",
+          "refcount": "0"
+        },
+        "raid6_pq": {
+          "size": "97812",
+          "refcount": "1"
+        },
+        "xor": {
+          "size": "21411",
+          "refcount": "1"
+        },
+        "ufs": {
+          "size": "74890",
+          "refcount": "0"
+        },
+        "qnx4": {
+          "size": "13317",
+          "refcount": "0"
+        },
+        "hfsplus": {
+          "size": "107516",
+          "refcount": "0"
+        },
+        "hfs": {
+          "size": "54677",
+          "refcount": "0"
+        },
+        "minix": {
+          "size": "36140",
+          "refcount": "0"
+        },
+        "ntfs": {
+          "size": "97369",
+          "refcount": "0"
+        },
+        "msdos": {
+          "size": "17332",
+          "refcount": "0"
+        },
+        "jfs": {
+          "size": "181348",
+          "refcount": "0"
+        },
+        "xfs": {
+          "size": "912173",
+          "refcount": "0"
+        },
+        "libcrc32c": {
+          "size": "12644",
+          "refcount": "2"
+        },
+        "vmhgfs": {
+          "size": "54565",
           "refcount": "0"
         },
         "vmw_balloon": {
@@ -260,35 +312,31 @@
           "refcount": "0"
         },
         "bluetooth": {
-          "size": "391136",
+          "size": "391196",
           "refcount": "10"
         },
         "vmwgfx": {
           "size": "175358",
           "refcount": "3"
         },
-        "usbhid": {
-          "size": "52659",
-          "refcount": "0"
-        },
-        "hid": {
-          "size": "106148",
-          "refcount": "2"
-        },
         "ttm": {
-          "size": "85150",
+          "size": "85115",
+          "refcount": "1"
+        },
+        "vmw_vmci": {
+          "size": "62966",
           "refcount": "1"
         },
         "drm": {
           "size": "303102",
           "refcount": "4"
         },
-        "shpchp": {
-          "size": "37032",
-          "refcount": "0"
-        },
         "i2c_piix4": {
           "size": "22155",
+          "refcount": "0"
+        },
+        "shpchp": {
+          "size": "37032",
           "refcount": "0"
         },
         "mac_hid": {
@@ -311,37 +359,49 @@
           "size": "42348",
           "refcount": "3"
         },
-        "psmouse": {
-          "size": "106714",
+        "hid_generic": {
+          "size": "12548",
           "refcount": "0"
         },
-        "mptspi": {
-          "size": "22542",
+        "usbhid": {
+          "size": "52570",
+          "refcount": "0"
+        },
+        "hid": {
+          "size": "106148",
           "refcount": "2"
+        },
+        "psmouse": {
+          "size": "106678",
+          "refcount": "0"
         },
         "ahci": {
           "size": "25819",
           "refcount": "0"
         },
         "libahci": {
-          "size": "32716",
+          "size": "32560",
           "refcount": "1"
         },
         "e1000": {
           "size": "145174",
           "refcount": "0"
         },
+        "mptspi": {
+          "size": "22542",
+          "refcount": "2"
+        },
         "mptscsih": {
           "size": "40150",
           "refcount": "1"
         },
-        "vmw_pvscsi": {
-          "size": "22858",
-          "refcount": "0"
-        },
         "mptbase": {
           "size": "101822",
           "refcount": "2"
+        },
+        "vmw_pvscsi": {
+          "size": "22858",
+          "refcount": "0"
         },
         "vmxnet3": {
           "size": "49693",
@@ -408,7 +468,8 @@
           },
           "state": "up",
           "arp": {
-            "192.168.110.2": "00:50:56:fc:fa:61"
+            "192.168.110.2": "00:50:56:fc:fa:61",
+            "192.168.110.254": "00:50:56:f5:e1:4e"
           },
           "routes": [
             {
@@ -442,15 +503,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "5845",
-              "packets": "67",
+              "bytes": "3609676",
+              "packets": "1965",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "5845",
-              "packets": "67",
+              "bytes": "3609676",
+              "packets": "1965",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -460,16 +521,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "10477",
-              "packets": "74",
+              "bytes": "1889518",
+              "packets": "27964",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "21029",
-              "packets": "279",
+              "bytes": "81004878",
+              "packets": "54852",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -1126,9 +1187,9 @@
     "current_user": "jonschwadron",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQDLog7eHAudFDBL8jXvf7+/n69sE4YU35v24TezPtL1FximKiRRb9EWjGzc58OKvCYLpYI+nwNvKzvob844vPwaNm2uAx8i/kjsfsRs9gYL7PCkDj63dc/nnvuGq72u1jHg6rrJBek0CITzlCMYzGAh7SMujICtP/8/cSZ7RxVUdLlYM+YSasDjaFlvbjyy3WHnhANA+BVPZAaoems1SgFBbFHdgk1X8MzHk8+na+PmnKjQmV6qaCyHIP2OqHLxpyc5JmmeE1zt7peECvFwtFMRJbUe0jkidPHZJyOfQo2yJkwIPiwUBkFD2sIOGBDVCU7OlUwq/SefL892XU3DRGll",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAK6eYM8m7E88p1QVs+USVuC1bMvAtCS/Bi+tnqlphLneGnTO47Fyo4NJ73B/QLcCvqGhIORK5nu1xOmOBlbmPCUpya5B1Aa03QvV8MiUGYgBlwai1ss7eNIY3zMg9tVgoSbwcpo+rPJEUrFt/oupu6kYo5mtHAnWxd4m9juZ1oP3AAAAFQCzKIJ2XODHv1Y7DQcxRaf4Lc3iqwAAAIBUYObmm4lL4Ndd19TD2OXYyv3PkXBHQI16AFMC3GQZnwiM41X6vBQsHwrRjcImsRAH7C+2JyuWoNh/L5SELN4BxcxCBa/7NhFz3R5ZKCTi9CWl13YcyNp5BKgNeuh4bps89E5Q8YeuAU9A+pBBeDXc82s3SZNAV+Zu85m5XHm/BQAAAIBFjgcRie1aTDTzhStqlcWXDQKtsdVq16eKCzPdAtY4YwaHWXDPRWSn5xNBBuXWrHiLV7LdFyjXwUbp6zOCcNPdEwypvx0nL2X44K0CEO6ULeROrkcU6XGGGXym+/74sOtPbyokqqxbjtPceIZcpR7sHcOVL70P/6HmgMjC8ocBjw==",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBtbrG8q29sGVSdanjBES9rP0ZKJely8Mkt2VJhLbz3hB8PgRZTGg5bjvTww1oD+1VfRVL1j8M1OqtFYKbo7/G4=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCvau6Pp6DpLAGjKyqv2+s+naOYnaYfVwbK8E3BuCHRUiPfm+V47wjWYvBXMxfOrGkBOhQCvJpKm0U3+NSBEy3fOVPzIxOSY3TUykG1pbA8JklwYzrx8MFPB6BLGW7pv/tG/DEzhPNE85i4y47obNlPm3bOowNXlPvl1gN407yGvNqx5FWw+u5Ec4RNj8hQSyBzzH4fVupLYGQIq8XkvS8bFasKv6W4tqXOBx/ESgcNOLRikBvmEuAJCL/jEvdhO72Lk3A8PY1eQa4XjjIXedQibujW9wlohfqHprAXMWcyUpowWChXHWKG8sK3FxBXASuv/mYWcduB2ioU3CNcDkGd",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAMW6Ml81UrIf2IkftXtDTMsQmGRi08TJUEPcIgY1FWiSnm0XfopoZ6zxzZ5l7ZJMBDU6Zls7mQ96AnUmcuqzDrlOOrOJieMdEbYHJRaLI1sf+0DxphDMcYLHeYHBcb80+BGzhgBZaYwr87+w49zWY3Duq9pqRIYX18UHMPYFjZGbAAAAFQCLPc5147riDMQAtbHX/hsfbANDBQAAAIEAq0SWBSPu7DkNmR8LgmELQUrI4mQOTbwCTQixUAdMaHf5nwHSIrDrP59flPL5s5Lxf2Uh1ZBdjF6q6ul+Lz0j9YzJdCemqRkRkPNFzyGY3W1m4iPS+mRCDXtBEoehEvfUTpy/6/UYNYABtc109Gr98qz+zrbQfox4X8VczkwQ9ewAAACAY9JfEOCrhipx+9QpgPbakgkYylFbiX7nSEH8zwwYxaPUrpqhMg0a0tK0AGbzG51oV/oiKVp5HHlu2WwzN7uGks6KSDVs2XHF9V6ka8yXTFyEYfVV6za/yYY9Q+wdknqtHfmmqB7r4IEhVB7rTdbCmLLNKvbm4mXiTa+C2L37AB0=",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAY/GQ2vJJvFabRkSP0YaXy6tfJyFrYfbEIheyXQIZyZEMHD6L+OMlcYSzdUeOtz4gbl0spGjTGGJxMIzachmdY=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
@@ -1139,13 +1200,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "17413948",
-        "kb_used": "7835452",
-        "kb_available": "8670876",
-        "percent_used": "48%",
+        "kb_used": "10091100",
+        "kb_available": "6415228",
+        "percent_used": "62%",
         "mount": "/",
         "total_inodes": "1114112",
-        "inodes_used": "313934",
-        "inodes_available": "800178",
+        "inodes_used": "316646",
+        "inodes_available": "797466",
         "inodes_percent_used": "29%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1159,9 +1220,9 @@
         "kb_available": "102356",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
-        "total_inodes": "384352",
+        "total_inodes": "384355",
         "inodes_used": "27",
-        "inodes_available": "384325",
+        "inodes_available": "384328",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -1169,14 +1230,14 @@
         ]
       },
       "udev": {
-        "kb_size": "1526628",
+        "kb_size": "1526644",
         "kb_used": "4",
-        "kb_available": "1526624",
+        "kb_available": "1526640",
         "percent_used": "1%",
         "mount": "/dev",
-        "total_inodes": "381657",
-        "inodes_used": "451",
-        "inodes_available": "381206",
+        "total_inodes": "381661",
+        "inodes_used": "454",
+        "inodes_available": "381207",
         "inodes_percent_used": "1%",
         "fs_type": "devtmpfs",
         "mount_options": [
@@ -1185,14 +1246,14 @@
         ]
       },
       "tmpfs": {
-        "kb_size": "307484",
-        "kb_used": "1052",
-        "kb_available": "306432",
+        "kb_size": "307488",
+        "kb_used": "1060",
+        "kb_available": "306428",
         "percent_used": "1%",
         "mount": "/run",
-        "total_inodes": "384352",
-        "inodes_used": "446",
-        "inodes_available": "383906",
+        "total_inodes": "384355",
+        "inodes_used": "451",
+        "inodes_available": "383904",
         "inodes_percent_used": "1%",
         "fs_type": "tmpfs",
         "mount_options": [
@@ -1246,6 +1307,17 @@
           "name=systemd"
         ]
       },
+      "vmware-vmblock": {
+        "mount": "/run/vmblock-fuse",
+        "fs_type": "fuse.vmware-vmblock",
+        "mount_options": [
+          "rw",
+          "nosuid",
+          "nodev",
+          "default_permissions",
+          "allow_other"
+        ]
+      },
       "gvfsd-fuse": {
         "mount": "/run/user/1000/gvfs",
         "fs_type": "fuse.gvfsd-fuse",
@@ -1288,27 +1360,27 @@
         "total": "3143676kB",
         "free": "3143676kB"
       },
-      "total": "3074820kB",
-      "free": "2057828kB",
-      "buffers": "64828kB",
-      "cached": "380268kB",
-      "active": "552984kB",
-      "inactive": "324368kB",
-      "dirty": "24kB",
+      "total": "3074844kB",
+      "free": "1083036kB",
+      "buffers": "126548kB",
+      "cached": "1142484kB",
+      "active": "1129948kB",
+      "inactive": "629888kB",
+      "dirty": "80kB",
       "writeback": "0kB",
-      "anon_pages": "432296kB",
-      "mapped": "129736kB",
-      "slab": "57224kB",
-      "slab_reclaimable": "29104kB",
-      "slab_unreclaim": "28120kB",
-      "page_tables": "25068kB",
+      "anon_pages": "490840kB",
+      "mapped": "120064kB",
+      "slab": "139940kB",
+      "slab_reclaimable": "108780kB",
+      "slab_unreclaim": "31160kB",
+      "page_tables": "25716kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
-      "commit_limit": "4681084kB",
-      "committed_as": "2570624kB",
+      "commit_limit": "4681096kB",
+      "committed_as": "4069460kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "168040kB",
-      "vmalloc_chunk": "34359563832kB"
+      "vmalloc_used": "173992kB",
+      "vmalloc_chunk": "34359540672kB"
     },
     "ip6address": "fe80::20c:29ff:fedf:8e9e",
     "virtualization": {
@@ -1319,7 +1391,7 @@
       "role": "guest"
     },
     "os": "linux",
-    "os_version": "3.13.0-40-generic",
+    "os_version": "3.13.0-32-generic",
     "lsb": {
       "id": "Ubuntu",
       "release": "14.04",
@@ -1452,10 +1524,10 @@
         "chef_root": "/opt/chefdk/embedded/apps/chef/lib"
       }
     },
-    "uptime_seconds": 244,
-    "uptime": "4 minutes 04 seconds",
-    "idletime_seconds": 191,
-    "idletime": "3 minutes 11 seconds",
+    "uptime_seconds": 6897,
+    "uptime": "1 hours 54 minutes 57 seconds",
+    "idletime_seconds": 5525,
+    "idletime": "1 hours 32 minutes 05 seconds",
     "cloud_v2": null,
     "dmi": {
       "dmidecode_version": "2.12",
@@ -3651,7 +3723,7 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1417879128.6250057,
+    "ohai_time": 1418417020.7446103,
     "init_package": "init",
     "recipes": [
       "chef_resource_merging",
@@ -3662,8 +3734,10 @@
       "opencv::install",
       "opencv::install_source",
       "linux::ceres",
+      "replicalabs::repo",
       "chef_resource_merging::default",
       "setup::default",
+      "apt::default",
       "opencv::install_package",
       "build-essential::default",
       "build-essential::_debian"
@@ -3681,7 +3755,6 @@
     "recipe[opencv::install]",
     "recipe[opencv::install_source]",
     "recipe[linux::ceres]",
-    "recipe[replicalabs::repo]",
-    "recipe[optimus::bumblebee]"
+    "recipe[replicalabs::repo]"
   ]
 }
