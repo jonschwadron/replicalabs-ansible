@@ -235,61 +235,21 @@
       "machine": "x86_64",
       "os": "GNU/Linux",
       "modules": {
-        "btrfs": {
-          "size": "835954",
-          "refcount": "0"
-        },
-        "raid6_pq": {
-          "size": "97812",
-          "refcount": "1"
-        },
-        "xor": {
-          "size": "21411",
-          "refcount": "1"
-        },
-        "ufs": {
-          "size": "74890",
-          "refcount": "0"
-        },
-        "qnx4": {
-          "size": "13317",
-          "refcount": "0"
-        },
-        "hfsplus": {
-          "size": "107516",
-          "refcount": "0"
-        },
-        "hfs": {
-          "size": "54677",
-          "refcount": "0"
-        },
-        "minix": {
-          "size": "36140",
-          "refcount": "0"
-        },
-        "ntfs": {
-          "size": "97369",
-          "refcount": "0"
-        },
-        "msdos": {
-          "size": "17332",
-          "refcount": "0"
-        },
-        "jfs": {
-          "size": "181348",
-          "refcount": "0"
-        },
-        "xfs": {
-          "size": "912173",
-          "refcount": "0"
-        },
-        "libcrc32c": {
-          "size": "12644",
-          "refcount": "2"
-        },
         "vmhgfs": {
           "size": "54565",
           "refcount": "0"
+        },
+        "hid_generic": {
+          "size": "12548",
+          "refcount": "0"
+        },
+        "usbhid": {
+          "size": "52570",
+          "refcount": "0"
+        },
+        "hid": {
+          "size": "106148",
+          "refcount": "2"
         },
         "vmw_balloon": {
           "size": "13415",
@@ -303,41 +263,41 @@
           "size": "13462",
           "refcount": "0"
         },
-        "bnep": {
-          "size": "19624",
-          "refcount": "2"
-        },
-        "rfcomm": {
-          "size": "69160",
-          "refcount": "0"
-        },
-        "bluetooth": {
-          "size": "391196",
-          "refcount": "10"
-        },
         "vmwgfx": {
           "size": "175358",
           "refcount": "3"
         },
-        "ttm": {
-          "size": "85115",
-          "refcount": "1"
+        "bnep": {
+          "size": "19624",
+          "refcount": "2"
         },
         "vmw_vmci": {
           "size": "62966",
+          "refcount": "1"
+        },
+        "i2c_piix4": {
+          "size": "22155",
+          "refcount": "0"
+        },
+        "ttm": {
+          "size": "85115",
           "refcount": "1"
         },
         "drm": {
           "size": "303102",
           "refcount": "4"
         },
-        "i2c_piix4": {
-          "size": "22155",
+        "rfcomm": {
+          "size": "69160",
           "refcount": "0"
         },
         "shpchp": {
           "size": "37032",
           "refcount": "0"
+        },
+        "bluetooth": {
+          "size": "391196",
+          "refcount": "10"
         },
         "mac_hid": {
           "size": "13205",
@@ -359,21 +319,13 @@
           "size": "42348",
           "refcount": "3"
         },
-        "hid_generic": {
-          "size": "12548",
-          "refcount": "0"
-        },
-        "usbhid": {
-          "size": "52570",
-          "refcount": "0"
-        },
-        "hid": {
-          "size": "106148",
-          "refcount": "2"
-        },
         "psmouse": {
           "size": "106678",
           "refcount": "0"
+        },
+        "mptspi": {
+          "size": "22542",
+          "refcount": "2"
         },
         "ahci": {
           "size": "25819",
@@ -387,10 +339,6 @@
           "size": "145174",
           "refcount": "0"
         },
-        "mptspi": {
-          "size": "22542",
-          "refcount": "2"
-        },
         "mptscsih": {
           "size": "40150",
           "refcount": "1"
@@ -398,14 +346,6 @@
         "mptbase": {
           "size": "101822",
           "refcount": "2"
-        },
-        "vmw_pvscsi": {
-          "size": "22858",
-          "refcount": "0"
-        },
-        "vmxnet3": {
-          "size": "49693",
-          "refcount": "0"
         },
         "floppy": {
           "size": "69418",
@@ -453,7 +393,7 @@
             "00:0C:29:DF:8E:9E": {
               "family": "lladdr"
             },
-            "192.168.110.130": {
+            "192.168.110.139": {
               "family": "inet",
               "prefixlen": "24",
               "netmask": "255.255.255.0",
@@ -468,8 +408,8 @@
           },
           "state": "up",
           "arp": {
-            "192.168.110.2": "00:50:56:fc:fa:61",
-            "192.168.110.254": "00:50:56:f5:e1:4e"
+            "192.168.110.254": "00:50:56:f5:e1:4e",
+            "192.168.110.2": "00:50:56:fc:fa:61"
           },
           "routes": [
             {
@@ -484,7 +424,7 @@
               "scope": "link",
               "metric": "1",
               "proto": "kernel",
-              "src": "192.168.110.130"
+              "src": "192.168.110.139"
             },
             {
               "destination": "fe80::/64",
@@ -503,15 +443,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "3609676",
-              "packets": "1965",
+              "bytes": "1040042",
+              "packets": "4212",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "3609676",
-              "packets": "1965",
+              "bytes": "1040042",
+              "packets": "4212",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -521,16 +461,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "1889518",
-              "packets": "27964",
+              "bytes": "18819782",
+              "packets": "307850",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "81004878",
-              "packets": "54852",
+              "bytes": "1010507236",
+              "packets": "674650",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -539,7 +479,7 @@
         }
       }
     },
-    "ipaddress": "192.168.110.130",
+    "ipaddress": "192.168.110.139",
     "macaddress": "00:0C:29:DF:8E:9E",
     "etc": {
       "passwd": {
@@ -788,10 +728,17 @@
           "shell": "/bin/bash",
           "gecos": "jonschwadron,,,"
         },
+        "nvidia-persistenced": {
+          "dir": "/",
+          "gid": 125,
+          "uid": 116,
+          "shell": "/sbin/nologin",
+          "gecos": "NVIDIA Persistence Daemon,,,"
+        },
         "sshd": {
           "dir": "/var/run/sshd",
           "gid": 65534,
-          "uid": 116,
+          "uid": 117,
           "shell": "/usr/sbin/nologin",
           "gecos": ""
         }
@@ -1181,15 +1128,21 @@
           "members": [
             "jonschwadron"
           ]
+        },
+        "nvidia-persistenced": {
+          "gid": 125,
+          "members": [
+
+          ]
         }
       }
     },
     "current_user": "jonschwadron",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQCvau6Pp6DpLAGjKyqv2+s+naOYnaYfVwbK8E3BuCHRUiPfm+V47wjWYvBXMxfOrGkBOhQCvJpKm0U3+NSBEy3fOVPzIxOSY3TUykG1pbA8JklwYzrx8MFPB6BLGW7pv/tG/DEzhPNE85i4y47obNlPm3bOowNXlPvl1gN407yGvNqx5FWw+u5Ec4RNj8hQSyBzzH4fVupLYGQIq8XkvS8bFasKv6W4tqXOBx/ESgcNOLRikBvmEuAJCL/jEvdhO72Lk3A8PY1eQa4XjjIXedQibujW9wlohfqHprAXMWcyUpowWChXHWKG8sK3FxBXASuv/mYWcduB2ioU3CNcDkGd",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAMW6Ml81UrIf2IkftXtDTMsQmGRi08TJUEPcIgY1FWiSnm0XfopoZ6zxzZ5l7ZJMBDU6Zls7mQ96AnUmcuqzDrlOOrOJieMdEbYHJRaLI1sf+0DxphDMcYLHeYHBcb80+BGzhgBZaYwr87+w49zWY3Duq9pqRIYX18UHMPYFjZGbAAAAFQCLPc5147riDMQAtbHX/hsfbANDBQAAAIEAq0SWBSPu7DkNmR8LgmELQUrI4mQOTbwCTQixUAdMaHf5nwHSIrDrP59flPL5s5Lxf2Uh1ZBdjF6q6ul+Lz0j9YzJdCemqRkRkPNFzyGY3W1m4iPS+mRCDXtBEoehEvfUTpy/6/UYNYABtc109Gr98qz+zrbQfox4X8VczkwQ9ewAAACAY9JfEOCrhipx+9QpgPbakgkYylFbiX7nSEH8zwwYxaPUrpqhMg0a0tK0AGbzG51oV/oiKVp5HHlu2WwzN7uGks6KSDVs2XHF9V6ka8yXTFyEYfVV6za/yYY9Q+wdknqtHfmmqB7r4IEhVB7rTdbCmLLNKvbm4mXiTa+C2L37AB0=",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBAY/GQ2vJJvFabRkSP0YaXy6tfJyFrYfbEIheyXQIZyZEMHD6L+OMlcYSzdUeOtz4gbl0spGjTGGJxMIzachmdY=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC0ouoQZ4PDPjPIe1eqD+wAHOMwB7QlhaP/TliijFJL9IW2Qy58heoA9FWy2j+DvrqPkDMnuKIWNprIdrQ3ZCw/217UWvMuC+g/mroHJJwhMKie75sePwZ+xrgYs0zlxzzxo4+0dOZc/mfWOCmX0dGOuihChl3yaDsmOlTBU+fi5Y1hhoLMnHoctbT3UpTSW7fil5fdqn0DPn3ssYA1tVgRedMxfQe2/SBrEwfAJXOuen5E2xr2IPmnbbt6B8oU3/jpjK7iq7Gf7GoJ2KQTZIhbF4w8zOViNWtwht7UrhrKWE2Rcp2uKpY+QO6EOxBEZtGAi/4qANmT8DL7+AFDUvSn",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAOy5PubJUYhKq9q2DKfTgqN3DyLMh16XshjEiRWovwmXEylIGhz+Rhsuo1+ZKdM3ddfNvWqnm/y29m3ldTU90Rozi3zvaMBpTqrY74RNpytg8TMfIv4mlMWgmom8aTlK0Py3ux52zmxK1tlM2QG7YWyIVKd/ZvQgo3wl4Gnis9mNAAAAFQDBjkVEUaREJOLliVYbT+3HeFAfgQAAAIEAl9jCd27wicpA+AfvClxwv9pZn2xhZ1Wu9ukwbyZlsitsQsxL+SaLVDaTd/KaylivEcIPDT5dEYvcriHvkjJQ/BgPQMZnEj9hWmkIhsjqnJz1aWJ5MvOszP4Lu1iXkg0buQBS1fgp9GwI+WugRiwm7Yoo6nRojbD6uXzBofIf8oEAAACBAKHhTcqgF5Nr/XcGoRbOgoF76Go46nWpnD1RcDPyrL2Z5jtCChdrJ/HMUKbWhZIC5YzbPcHAvpLp5c4ETWDr2LDZOImIPTjjOw72GZJRum/lh6V69ZLGwWcDASLMrCXJBtAqBrnFkWkVI9LDCA9r+c8zSoNt97KgQ68jrG7HEh49",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNn3YfINHU6MrTJwExSLU/JtzkoiwhF7FVUUcMYhiwtDRJOHgQi9gNYrFJnpvx5mmzVemwA2vUUVBbjak0h1h64=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
@@ -1200,14 +1153,14 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "17413948",
-        "kb_used": "10091100",
-        "kb_available": "6415228",
-        "percent_used": "62%",
+        "kb_used": "8941660",
+        "kb_available": "7564668",
+        "percent_used": "55%",
         "mount": "/",
         "total_inodes": "1114112",
-        "inodes_used": "316646",
-        "inodes_available": "797466",
-        "inodes_percent_used": "29%",
+        "inodes_used": "285284",
+        "inodes_available": "828828",
+        "inodes_percent_used": "26%",
         "fs_type": "ext4",
         "mount_options": [
           "rw",
@@ -1216,13 +1169,13 @@
       },
       "none": {
         "kb_size": "102400",
-        "kb_used": "44",
-        "kb_available": "102356",
+        "kb_used": "84",
+        "kb_available": "102316",
         "percent_used": "1%",
         "mount": "/sys/fs/pstore",
         "total_inodes": "384355",
-        "inodes_used": "27",
-        "inodes_available": "384328",
+        "inodes_used": "37",
+        "inodes_available": "384318",
         "inodes_percent_used": "1%",
         "fs_type": "pstore",
         "mount_options": [
@@ -1236,8 +1189,8 @@
         "percent_used": "1%",
         "mount": "/dev",
         "total_inodes": "381661",
-        "inodes_used": "454",
-        "inodes_available": "381207",
+        "inodes_used": "453",
+        "inodes_available": "381208",
         "inodes_percent_used": "1%",
         "fs_type": "devtmpfs",
         "mount_options": [
@@ -1247,8 +1200,8 @@
       },
       "tmpfs": {
         "kb_size": "307488",
-        "kb_used": "1060",
-        "kb_available": "306428",
+        "kb_used": "1064",
+        "kb_available": "306424",
         "percent_used": "1%",
         "mount": "/run",
         "total_inodes": "384355",
@@ -1356,31 +1309,31 @@
     },
     "memory": {
       "swap": {
-        "cached": "0kB",
+        "cached": "152kB",
         "total": "3143676kB",
-        "free": "3143676kB"
+        "free": "3118860kB"
       },
       "total": "3074844kB",
-      "free": "1083036kB",
-      "buffers": "126548kB",
-      "cached": "1142484kB",
-      "active": "1129948kB",
-      "inactive": "629888kB",
-      "dirty": "80kB",
+      "free": "373940kB",
+      "buffers": "32100kB",
+      "cached": "1689752kB",
+      "active": "1101984kB",
+      "inactive": "1293336kB",
+      "dirty": "48kB",
       "writeback": "0kB",
-      "anon_pages": "490840kB",
-      "mapped": "120064kB",
-      "slab": "139940kB",
-      "slab_reclaimable": "108780kB",
-      "slab_unreclaim": "31160kB",
-      "page_tables": "25716kB",
+      "anon_pages": "673344kB",
+      "mapped": "100200kB",
+      "slab": "204720kB",
+      "slab_reclaimable": "170360kB",
+      "slab_unreclaim": "34360kB",
+      "page_tables": "28352kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "4681096kB",
-      "committed_as": "4069460kB",
+      "committed_as": "3078256kB",
       "vmalloc_total": "34359738367kB",
-      "vmalloc_used": "173992kB",
-      "vmalloc_chunk": "34359540672kB"
+      "vmalloc_used": "168192kB",
+      "vmalloc_chunk": "34359534900kB"
     },
     "ip6address": "fe80::20c:29ff:fedf:8e9e",
     "virtualization": {
@@ -1524,10 +1477,10 @@
         "chef_root": "/opt/chefdk/embedded/apps/chef/lib"
       }
     },
-    "uptime_seconds": 6897,
-    "uptime": "1 hours 54 minutes 57 seconds",
-    "idletime_seconds": 5525,
-    "idletime": "1 hours 32 minutes 05 seconds",
+    "uptime_seconds": 4814,
+    "uptime": "1 hours 20 minutes 14 seconds",
+    "idletime_seconds": 2570,
+    "idletime": "42 minutes 50 seconds",
     "cloud_v2": null,
     "dmi": {
       "dmidecode_version": "2.12",
@@ -3723,11 +3676,11 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1418417020.7446103,
+    "ohai_time": 1418704486.3074236,
     "init_package": "init",
     "recipes": [
       "chef_resource_merging",
-      "setup",
+      "setup::message_begin",
       "linux::essentials",
       "linux::packages",
       "linux::sshkey",
@@ -3736,7 +3689,6 @@
       "linux::ceres",
       "replicalabs::repo",
       "chef_resource_merging::default",
-      "setup::default",
       "apt::default",
       "opencv::install_package",
       "build-essential::default",
@@ -3748,7 +3700,7 @@
   },
   "run_list": [
     "recipe[chef_resource_merging]",
-    "recipe[setup]",
+    "recipe[setup::message_begin]",
     "recipe[linux::essentials]",
     "recipe[linux::packages]",
     "recipe[linux::sshkey]",
