@@ -137,7 +137,6 @@ end
   linux-source
   mercurial
   meshlab
-  nvidia-cuda-toolkit
   nvidia-profiler
   nvidia-visual-profiler
   openssh-client
@@ -154,3 +153,4 @@ end
 end
 
 #nvidia-current-dev
+#nvidia-cuda-toolkit
