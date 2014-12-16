@@ -9,6 +9,6 @@ git clone [https url] chef-repo
 
 ## Run setup.sh ##
 ```
-cd ~/chef-repo
+cd chef-repo
 sudo bash setup.sh
 ```
