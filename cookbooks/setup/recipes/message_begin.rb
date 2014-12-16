@@ -15,7 +15,7 @@ def message_start
   line = Hash.new
   line[1] = "Starting Replica Labs setup..."
 
-  fps=25
+  fps=30
   delay = 1.0/fps
 
   for i in 1..line.size do
@@ -50,7 +50,7 @@ def message_rendor
   line[6] = "Rendor: So why don't you go make a sandwich and come back in a while..."
   line[7] = "Rendor: =)"
 
-  fps = 25
+  fps = 30
   delay = 1.0/fps
 
   for i in 1..line.size do
