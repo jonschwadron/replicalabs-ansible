@@ -55,6 +55,10 @@ class Chef
         reusable_resource("apt_package", pkg, :install, &block)
       end
 
+      def apt_package(pkg, &block)
+        reusable_resource("git", other_repo, :checkout, &block)
+      end
+
       def service(svc, &block)
         reusable_resource("service", svc, :nothing, &block)
       end

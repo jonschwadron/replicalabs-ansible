@@ -393,7 +393,7 @@
             "00:0C:29:DF:8E:9E": {
               "family": "lladdr"
             },
-            "192.168.110.139": {
+            "192.168.110.141": {
               "family": "inet",
               "prefixlen": "24",
               "netmask": "255.255.255.0",
@@ -424,7 +424,7 @@
               "scope": "link",
               "metric": "1",
               "proto": "kernel",
-              "src": "192.168.110.139"
+              "src": "192.168.110.141"
             },
             {
               "destination": "fe80::/64",
@@ -443,15 +443,15 @@
         "interfaces": {
           "lo": {
             "rx": {
-              "bytes": "1040042",
-              "packets": "4212",
+              "bytes": "1089745",
+              "packets": "4567",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
             },
             "tx": {
-              "bytes": "1040042",
-              "packets": "4212",
+              "bytes": "1089745",
+              "packets": "4567",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
@@ -461,16 +461,16 @@
           "eth0": {
             "tx": {
               "queuelen": "1000",
-              "bytes": "18819782",
-              "packets": "307850",
+              "bytes": "16747131",
+              "packets": "271114",
               "errors": "0",
               "drop": "0",
               "carrier": "0",
               "collisions": "0"
             },
             "rx": {
-              "bytes": "1010507236",
-              "packets": "674650",
+              "bytes": "842829124",
+              "packets": "566862",
               "errors": "0",
               "drop": "0",
               "overrun": "0"
@@ -479,7 +479,7 @@
         }
       }
     },
-    "ipaddress": "192.168.110.139",
+    "ipaddress": "192.168.110.141",
     "macaddress": "00:0C:29:DF:8E:9E",
     "etc": {
       "passwd": {
@@ -728,17 +728,10 @@
           "shell": "/bin/bash",
           "gecos": "jonschwadron,,,"
         },
-        "nvidia-persistenced": {
-          "dir": "/",
-          "gid": 125,
-          "uid": 116,
-          "shell": "/sbin/nologin",
-          "gecos": "NVIDIA Persistence Daemon,,,"
-        },
         "sshd": {
           "dir": "/var/run/sshd",
           "gid": 65534,
-          "uid": 117,
+          "uid": 116,
           "shell": "/usr/sbin/nologin",
           "gecos": ""
         }
@@ -1128,21 +1121,15 @@
           "members": [
             "jonschwadron"
           ]
-        },
-        "nvidia-persistenced": {
-          "gid": 125,
-          "members": [
-
-          ]
         }
       }
     },
     "current_user": "jonschwadron",
     "keys": {
       "ssh": {
-        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC0ouoQZ4PDPjPIe1eqD+wAHOMwB7QlhaP/TliijFJL9IW2Qy58heoA9FWy2j+DvrqPkDMnuKIWNprIdrQ3ZCw/217UWvMuC+g/mroHJJwhMKie75sePwZ+xrgYs0zlxzzxo4+0dOZc/mfWOCmX0dGOuihChl3yaDsmOlTBU+fi5Y1hhoLMnHoctbT3UpTSW7fil5fdqn0DPn3ssYA1tVgRedMxfQe2/SBrEwfAJXOuen5E2xr2IPmnbbt6B8oU3/jpjK7iq7Gf7GoJ2KQTZIhbF4w8zOViNWtwht7UrhrKWE2Rcp2uKpY+QO6EOxBEZtGAi/4qANmT8DL7+AFDUvSn",
-        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBAOy5PubJUYhKq9q2DKfTgqN3DyLMh16XshjEiRWovwmXEylIGhz+Rhsuo1+ZKdM3ddfNvWqnm/y29m3ldTU90Rozi3zvaMBpTqrY74RNpytg8TMfIv4mlMWgmom8aTlK0Py3ux52zmxK1tlM2QG7YWyIVKd/ZvQgo3wl4Gnis9mNAAAAFQDBjkVEUaREJOLliVYbT+3HeFAfgQAAAIEAl9jCd27wicpA+AfvClxwv9pZn2xhZ1Wu9ukwbyZlsitsQsxL+SaLVDaTd/KaylivEcIPDT5dEYvcriHvkjJQ/BgPQMZnEj9hWmkIhsjqnJz1aWJ5MvOszP4Lu1iXkg0buQBS1fgp9GwI+WugRiwm7Yoo6nRojbD6uXzBofIf8oEAAACBAKHhTcqgF5Nr/XcGoRbOgoF76Go46nWpnD1RcDPyrL2Z5jtCChdrJ/HMUKbWhZIC5YzbPcHAvpLp5c4ETWDr2LDZOImIPTjjOw72GZJRum/lh6V69ZLGwWcDASLMrCXJBtAqBrnFkWkVI9LDCA9r+c8zSoNt97KgQ68jrG7HEh49",
-        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBNn3YfINHU6MrTJwExSLU/JtzkoiwhF7FVUUcMYhiwtDRJOHgQi9gNYrFJnpvx5mmzVemwA2vUUVBbjak0h1h64=",
+        "host_rsa_public": "AAAAB3NzaC1yc2EAAAADAQABAAABAQC0dZ705ayvds1VphY1N+NEjyv3UZ+nf4FbZVgF5f+oM8lf85zmsJOWg60Gl582uqS6in0/ehmYLBzy8m5z9yX/MpZ44U0ngtVMBXya03ytoldAlVPWHuCgbV44vpmhj3ylPCKsJy5CvdIymzJW/YFFwwfYnp8uY44ej7om1oRTdvyJwhPIF/igI0OuuSTfnb5YCOBnMuW1Gs/Ygpv6pUePHca5dJM0QN5g6PherQjNE9XeFhuuTWZ0f2XrY1/Q3ET7LF5D+sSzgy3D+rnSy0kH9MBhoGR0BFPnBo1g5+A+1JqosILwc335HL0mNC0P61gB0YJLGBzRxk2ABwEaQVtf",
+        "host_dsa_public": "AAAAB3NzaC1kc3MAAACBALmJkMpUHexy6BkCwvKMfPGpCAExFHExqr2KU1HL+Hw2N8yk98wjhNIR5q252DV9EMVmf3Ws1JaEy2GrgicrK8iNnMpCw90/GiDtN7dWo/xTozKzaRGzEO4euaw94z4S2Eg2P95aFhwcimP3E1Q21axom7x1NMWX/rhTtD5plZEzAAAAFQDKKi4W/dY48w1Sk5n/m+ABWnTGwwAAAIEAlDsIpNzVmRCqxdcap6nZwXvqTMogUDZ91OIowotQsZonNpDg74lfsWeaFt13Cv00F0Fd2CEgd/kkgaKqD74QECUdZ+jEZRsGWMM5l4gusaDL9pkwEj3169ZpygWFkvWpGifFF4zCZXp83tI5WL7jybj2RvkdvvphP3cd/rk7R/kAAACAcbDvSLfQwNXDXijdV9f8H2j//1DFgnkW8qKFhOOSsLpuPFwBNHiNAcKoqvw6BUdAFGl7wAjM3hA/Ewgcd21OPq8Odo/FWYPipYuh1u5MNSWX39IaoiCUG+wU5zrlk2qhyLNs32hw/E5nijCeHR9s9PWFPx2a6LTzUbTJKfKT+S0=",
+        "host_ecdsa_public": "AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBL+h2X/RvHnEskWvCXDblvX6mUpLp/mJdiCiFnEpqEid2GEYcJ3mSEFZ7QrApjiiqg60PrXQOWR9NfNRIq7oKkQ=",
         "host_ecdsa_type": "ecdsa-sha2-nistp256"
       }
     },
@@ -1153,13 +1140,13 @@
     "filesystem": {
       "/dev/sda1": {
         "kb_size": "17413948",
-        "kb_used": "8941660",
-        "kb_available": "7564668",
-        "percent_used": "55%",
+        "kb_used": "7110292",
+        "kb_available": "9396036",
+        "percent_used": "44%",
         "mount": "/",
         "total_inodes": "1114112",
-        "inodes_used": "285284",
-        "inodes_available": "828828",
+        "inodes_used": "284942",
+        "inodes_available": "829170",
         "inodes_percent_used": "26%",
         "fs_type": "ext4",
         "mount_options": [
@@ -1309,31 +1296,31 @@
     },
     "memory": {
       "swap": {
-        "cached": "152kB",
+        "cached": "1260kB",
         "total": "3143676kB",
-        "free": "3118860kB"
+        "free": "3100208kB"
       },
       "total": "3074844kB",
-      "free": "373940kB",
-      "buffers": "32100kB",
-      "cached": "1689752kB",
-      "active": "1101984kB",
-      "inactive": "1293336kB",
-      "dirty": "48kB",
+      "free": "1519224kB",
+      "buffers": "30068kB",
+      "cached": "439380kB",
+      "active": "559280kB",
+      "inactive": "745832kB",
+      "dirty": "52kB",
       "writeback": "0kB",
-      "anon_pages": "673344kB",
-      "mapped": "100200kB",
-      "slab": "204720kB",
-      "slab_reclaimable": "170360kB",
-      "slab_unreclaim": "34360kB",
-      "page_tables": "28352kB",
+      "anon_pages": "834532kB",
+      "mapped": "67360kB",
+      "slab": "138448kB",
+      "slab_reclaimable": "103816kB",
+      "slab_unreclaim": "34632kB",
+      "page_tables": "30344kB",
       "nfs_unstable": "0kB",
       "bounce": "0kB",
       "commit_limit": "4681096kB",
-      "committed_as": "3078256kB",
+      "committed_as": "3663580kB",
       "vmalloc_total": "34359738367kB",
       "vmalloc_used": "168192kB",
-      "vmalloc_chunk": "34359534900kB"
+      "vmalloc_chunk": "34359547292kB"
     },
     "ip6address": "fe80::20c:29ff:fedf:8e9e",
     "virtualization": {
@@ -1477,10 +1464,10 @@
         "chef_root": "/opt/chefdk/embedded/apps/chef/lib"
       }
     },
-    "uptime_seconds": 4814,
-    "uptime": "1 hours 20 minutes 14 seconds",
-    "idletime_seconds": 2570,
-    "idletime": "42 minutes 50 seconds",
+    "uptime_seconds": 6034,
+    "uptime": "1 hours 40 minutes 34 seconds",
+    "idletime_seconds": 2959,
+    "idletime": "49 minutes 19 seconds",
     "cloud_v2": null,
     "dmi": {
       "dmidecode_version": "2.12",
@@ -3676,7 +3663,7 @@
         "removable": "0"
       }
     },
-    "ohai_time": 1418704486.3074236,
+    "ohai_time": 1418744331.9130197,
     "init_package": "init",
     "recipes": [
       "chef_resource_merging",

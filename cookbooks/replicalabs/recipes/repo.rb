@@ -22,7 +22,7 @@ username = Etc.getlogin
   Server
     }.each do |other_repo|    
 
-    git "#{SOURCE_DIRECTORY}" do
+    git "#{SOURCE_DIRECTORY}/#{other_repo}" do
         repository "git@bitbucket.org:replicalabs/#{other_repo}"
         revision "master"
         user "#{username}"
