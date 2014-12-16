@@ -17,7 +17,7 @@ sudo dpkg -i chefdk_0.3.5-1_amd64.deb
 
 ## Clone this repository into the chef-repo folder ##
 ```
-git clone [url] chef-repo
+git clone [https url] chef-repo
 ```
 
 ## Configure knife.rb ##
