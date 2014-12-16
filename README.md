@@ -3,12 +3,6 @@
 Make sure the virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
 ## To-do: ##
-Rewrite recipes for the following cookbooks:
-
-*  replicalabs::repo
-*  optimus
-
-Rewrite recipes for the following cookbooks:
 
 *  create an installation script that will perform the commands below.
 
