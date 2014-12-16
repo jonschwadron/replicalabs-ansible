@@ -46,4 +46,4 @@ if [ -d $BERKSHELF_SETUP_DIRECTORY ]; then
 fi
 
 # start chef-client in local mode
-sudo chef-client -z -j runlist.json
+sudo chef-client -z

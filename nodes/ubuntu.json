@@ -1,5 +1,7 @@
 {
-"run_list": [
+  "name": "ubuntu",
+
+  "run_list": [
     "recipe[chef_resource_merging]",
     "recipe[setup::message_begin]",
     "recipe[linux::essentials]",
@@ -9,5 +11,5 @@
     "recipe[opencv::install_source]",
     "recipe[linux::ceres]",
     "recipe[replicalabs::repo]"
-  ]
+    ]
 }
