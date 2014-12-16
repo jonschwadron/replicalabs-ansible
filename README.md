@@ -2,34 +2,13 @@
 
 Make sure the virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
-## To-do: ##
-
-*  create an installation script that will perform the commands below.
-
-
-## Install Chef ##
-```
-wget https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.5-1_amd64.deb
-```
-```
-sudo dpkg -i chefdk_0.3.5-1_amd64.deb
-```
-
 ## Clone this repository into the chef-repo folder ##
 ```
 git clone [https url] chef-repo
 ```
 
-## Configure knife.rb ##
+## Run setup.sh ##
 ```
-mkdir .chef
-```
-```
-echo "cookbook_path ['~/chef-repo/cookbooks', '~/chef-repo/berkshelf']
-chef_repo_path ['~/chef-repo']" > ~/.chef/knife.rb
-```
-
-## Start the setup ##
-```
-sudo chef-client -z
+cd ~/chef-repo
+sudo bash setup.sh
 ```
