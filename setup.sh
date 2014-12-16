@@ -1,0 +1,42 @@
+#!/bin/bash
+set -e
+set -u
+
+CHEFDK_SOURCE="https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/chefdk_0.3.5-1_amd64.deb"
+CHEFDK_FILE="chefdk_0.3.5-1_amd64.deb"
+CHEF_CONFIG_DIRECTORY=~/.chef
+BERKSFILE_SOURCE=~/chef-repo/cookbooks/setup
+BERKSHELF_DIRECTORY=~/chef-repo/berkshelf
+BERKSHELF_SETUP_DIRECTORY=~/chef-repo/berkshelf/setup
+
+if [ -f $CHEFDK_FILE ]; then
+  #check current version of Chef DK
+  chef-client -v
+else
+  # Download and unpackage Chef Development Kit
+  wget ${CHEFDK_SOURCE}
+  sudo dpkg -i ${CHEFDK_FILE}
+fi
+
+# configure chef cookbook directory
+if [ ! -d $CHEF_CONFIG_DIRECTORY ]; then
+	mkdir ${CHEF_CONFIG_DIRECTORY}
+  echo "cookbook_path ['~/chef-repo/cookbooks', '~/chef-repo/berkshelf']
+  chef_repo_path ['~/chef-repo']" > ~/.chef/knife.rb
+fi
+
+#run berks vendor into chef-repo/berkshelf directory
+if [ ! -d $BERKSHELF_DIRECTORY ]; then
+  cd ${BERKSFILE_SOURCE}
+  berks vendor ${BERKSHELF_DIRECTORY}
+fi
+
+#remove setup folder inside the berkshelf folder to avoid warning messages
+if [ -d $BERKSHELF_SETUP_DIRECTORY ]; then
+  cd ${BERKSHELF_DIRECTORY}
+  sudo rm -rf setup
+fi
+
+# start chef-client in local mode
+cd ~
+sudo chef-client -z

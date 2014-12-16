@@ -46,7 +46,6 @@ remote_file node['opencv']['source']['url'] do
   checksum node['opencv']['source']['checksum']
   source node['opencv']['source']['url']
   backup false
-  not_if { ::File.exists?(src_filepath) }
 end
 
 cmake_define = node['opencv']['source']['cmake_define'].map { |key, value| "-D #{key}=#{value}" }.join(' ')
