@@ -10,7 +10,7 @@
 
 ANDROID_DIRECTORY = File.join(Dir.home, "android")
 SRC_FILE = "adt-bundle-linux-x86_64-20140321.zip"
-SRC_LINK = "http://dl.google.com/android/adt/22.6.2/adt-bundle-linux-x86_64-20140321.zip"
+SRC_LINK = "http://dl.google.com/android/adt/22.6.2/#{SRC_FILE}"
 EXTRACT_PATH = "#{ANDROID_DIRECTORY}/#{SRC_FILE}"
 SRC_DIRECTORY = "#{ANDROID_DIRECTORY}/adt-bundle-linux-x86_64-20140321"
 
