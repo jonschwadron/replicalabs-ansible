@@ -8,16 +8,6 @@
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
 
-=begin
-SOURCES_DIRECTORY = File.join(Dir.home, "chef-repo/cookbooks/linux/files")
-
-#replace sources.list
-file "/etc/apt/sources.list" do
-  content ::File.open("#{SOURCES_DIRECTORY}/sources.list").read
-  action :create
-end
-=end
-
 include_recipe 'apt'
 
 #FFMPEGS PACKAGES

@@ -4,12 +4,12 @@
   "run_list": [
     "recipe[chef_resource_merging]",
     "recipe[setup::message_begin]",
-    "recipe[linux::essentials]",
-    "recipe[linux::packages]",
-    "recipe[linux::sshkey]",
+    "recipe[replicalabs::essentials]",
+    "recipe[replicalabs::packages]",
+    "recipe[replicalabs::sshkey]",
     "recipe[opencv::install]",
     "recipe[opencv::install_source]",
-    "recipe[linux::ceres]",
+    "recipe[replicalabs::ceres]",
     "recipe[replicalabs::repo]"
     ]
 }

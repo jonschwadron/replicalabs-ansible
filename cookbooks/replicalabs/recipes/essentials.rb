@@ -7,3 +7,13 @@
 #
 # Copyright 2014, Replica Labs
 # All rights reserved - Do Not Redistribute
+
+# Install rubyzip gem
+chef_gem 'rubyzip' do
+  action :install
+end
+
+# Install sshkey gem
+chef_gem 'sshkey' do
+  action :install
+end

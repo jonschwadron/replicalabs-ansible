@@ -15,9 +15,6 @@ EXTRACT_PATH = "#{ANDROID_DIRECTORY}/#{SRC_FILE}"
 SRC_DIRECTORY = "#{ANDROID_DIRECTORY}/adt-bundle-linux-x86_64-20140321"
 
 directory "#{ANDROID_DIRECTORY}" do
-    owner 'root'
-    group 'root'
-    mode '0755'
   action :create
 end
 
