@@ -7,7 +7,7 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #chefdk
 CHEFDK_FILE="chefdk_0.3.5-1_amd64.deb"
-CHEFDK_SOURCE="https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/"+${CHEFDK_FILE}
+CHEFDK_SOURCE="https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/"${CHEFDK_FILE}
 
 #chef directories
 CHEF_CONFIG_DIRECTORY=~/.chef
