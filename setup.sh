@@ -18,6 +18,7 @@ BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
 if [ -f $CHEFDK_FILE ]; then
   #check current version of Chef DK
   chef-client -v
+
 else
   # Download and unpackage Chef Development Kit
   wget ${CHEFDK_SOURCE}

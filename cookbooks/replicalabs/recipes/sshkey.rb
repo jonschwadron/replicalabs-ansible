@@ -43,7 +43,38 @@ file "#{pkey}.pub" do
   action :create_if_missing
 end
 
-puts "This is your public key:"
-puts "\n\n==================================================="
+puts "\n\nThis is your public key:"
+puts "==================================================="
 puts sshkey.ssh_public_key
 puts "===================================================\n\n"
+
+def message_rendor
+
+  login_name = Etc.getlogin
+  
+  line = Hash.new
+  line[1] = "Rendor: I have generated your SSH Key."
+  line[2] = "Rendor: We need to add it to your bitbucket account."
+  line[2] = "Rendor: Go ahead and copy the public key above"
+  line[3] = "Rendor: Go to bitbucket.com"
+  line[4] = "Rendor: Click the user icon (upper right corner) and click Manage account"
+  line[5] = "Rendor: Click SSH keys"
+  line[6] = "Rendor: Click Add key and paste your public key."
+
+  fps = 30
+  delay = 1.0/fps
+
+  for i in 1..line.size do
+    for j in 1..line[i].length do
+      print line[i][((j+=1)-2) % line[i].length]
+      sleep delay
+    end
+    sleep delay*25
+    print "\n"
+  end
+end
+
+message_rendor
+
+print "\nOnce you added your public key to your account, press enter to continue..."
+STDIN.readline
