@@ -44,22 +44,23 @@ file "#{pkey}.pub" do
 end
 
 puts "\n\nThis is your public key:"
-puts "==================================================="
+puts "---------------------------------------------------"
 puts sshkey.ssh_public_key
-puts "===================================================\n\n"
+puts "---------------------------------------------------\n\n"
 
 def message_rendor
 
   login_name = Etc.getlogin
   
   line = Hash.new
-  line[1] = "Rendor: I have generated your SSH Key."
-  line[2] = "Rendor: We need to add it to your bitbucket account."
-  line[2] = "Rendor: Go ahead and copy the public key above"
-  line[3] = "Rendor: Go to bitbucket.com"
-  line[4] = "Rendor: Click the user icon (upper right corner) and click Manage account"
-  line[5] = "Rendor: Click SSH keys"
-  line[6] = "Rendor: Click Add key and paste your public key."
+  line[1] = "Rendor: Please add your SSH Key to your bitbucket account."
+  line[2] = "Rendor: Copy the key shown above"
+  line[3] = "Rendor: Log in at bitbucket.com"
+  line[4] = "Rendor: Click the user icon (upper right corner)"
+  line[5] = "Rendor: Click Manage account"
+  line[6] = "Rendor: Click SSH keys"
+  line[7] = "Rendor: Click Add key" 
+  line[8] = "Rendor: Paste your public key."
 
   fps = 30
   delay = 1.0/fps
