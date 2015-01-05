@@ -4,7 +4,6 @@ Make sure the virtual machine have at least 2 GB memory allocated, otherwise the
 
 ## To-do: ##
 
-*  create a ruby code to halt the chef-dk process after running SSH-KEY recipe and then prompt the user to add his/her SSH key into the bitbucket account. 
 *  Check output of chef-client version and validate it.
 *  Update CHANGELOG.md and README.md
 *  Finish the documentation
