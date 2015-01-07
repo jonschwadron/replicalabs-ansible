@@ -2,20 +2,22 @@
 set -e
 set -u
 
-#bash script directory
-SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
-
-#chefdk
+#chefdk versions and file name
 CHEF_VERSION="11.18.0.rc.1"
-CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
 CHEFDK_FILE="chefdk_0.3.5-1_amd64.deb"
 CHEFDK_SOURCE="https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/"${CHEFDK_FILE}
+
+#bash script directory
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #chef directories
 CHEF_CONFIG_DIRECTORY=~/.chef
 BERKSFILE_SOURCE=${SCRIPT_DIR}/cookbooks/setup
 BERKSHELF_DIRECTORY=${SCRIPT_DIR}/berkshelf
 BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
+
+CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
+
 
 if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
   printf "\nChef is outdated. Performing update...\n\n\n"
