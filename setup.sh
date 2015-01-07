@@ -6,6 +6,8 @@ set -u
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
 
 #chefdk
+CHEF_VERSION="11.18.0.rc.1"
+CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
 CHEFDK_FILE="chefdk_0.3.5-1_amd64.deb"
 CHEFDK_SOURCE="https://opscode-omnibus-packages.s3.amazonaws.com/ubuntu/12.04/x86_64/"${CHEFDK_FILE}
 
@@ -15,18 +17,13 @@ BERKSFILE_SOURCE=${SCRIPT_DIR}/cookbooks/setup
 BERKSHELF_DIRECTORY=${SCRIPT_DIR}/berkshelf
 BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
 
-if [ -f $CHEFDK_FILE ]; then
-  #check current version of Chef DK
-  chef-client -v
-
-else
-  # Download and unpackage Chef Development Kit
+if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
+  printf "\nChef is outdated. Performing update...\n\n\n"
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
-  chef-client -v
 fi
 
-# configure chef cookbook directory
+# create chef cookbook directory
 if [ ! -d $CHEF_CONFIG_DIRECTORY ]; then
 	mkdir ${CHEF_CONFIG_DIRECTORY}
 fi
@@ -40,7 +37,7 @@ if [ ! -d $BERKSHELF_DIRECTORY ]; then
   berks vendor ${BERKSHELF_DIRECTORY}
 fi
 
-#remove setup folder inside the berkshelf folder to avoid warning messages
+#remove setup folder inside the berkshelf folder to avoid duplicate warning messages
 if [ -d $BERKSHELF_SETUP_DIRECTORY ]; then
   cd ${BERKSHELF_DIRECTORY}
   sudo rm -rf setup
