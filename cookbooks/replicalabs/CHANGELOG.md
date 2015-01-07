@@ -15,6 +15,7 @@ This file is used to list changes made in each version of the replicalabs cookbo
 
 - [Jonathan Schwadron] - Added user SSH key instruction and user input prompt.
 
+- [Jonathan Schwadron] - Removed old bash scripts.
 - - -
 
 
