@@ -4,7 +4,6 @@ Make sure the virtual machine have at least 2 GB memory allocated, otherwise the
 
 ## To-do: ##
 
-*  Check output of chef-client version and validate it.
 *  Update CHANGELOG.md and README.md
 *  Finish the documentation
 
