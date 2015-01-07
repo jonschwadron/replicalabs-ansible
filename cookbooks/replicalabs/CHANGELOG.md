@@ -5,7 +5,7 @@ This file is used to list changes made in each version of the replicalabs cookbo
 
 0.1.0
 -----
-- [Jonathan Schwadron] - Initial release of replicalabs
+- [Jonathan Schwadron] - Initial release of replicalabs cookbook
 
 - - -
 
@@ -16,6 +16,8 @@ This file is used to list changes made in each version of the replicalabs cookbo
 - [Jonathan Schwadron] - Added user SSH key instruction and user input prompt.
 
 - [Jonathan Schwadron] - Removed old bash scripts.
+
+- [Jonathan Schwadron] - Added chef version validation.
 - - -
 
 
