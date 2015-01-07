@@ -4,7 +4,6 @@ Make sure the virtual machine have at least 2 GB memory allocated, otherwise the
 
 ## To-do: ##
 
-*  Update CHANGELOG.md and README.md
 *  Finish the documentation
 
 ## Clone this repository into the chef-repo folder ##
