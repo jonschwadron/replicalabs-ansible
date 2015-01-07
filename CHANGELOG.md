@@ -1,11 +1,17 @@
 replicalabs CHANGELOG
 =====================
 
-This file is used to list changes made in each version of the replicalabs cookbook.
-
 0.1.0
 -----
 - [Jonathan Schwadron] - Initial release of replicalabs cookbook
+
+- [Jonathan Schwadron] - Added linux packages recipe
+
+- [Jonathan Schwadron] - Added ceres solver recipe
+
+- [Jonathan Schwadron] - Added Replica Labs repo recipe
+
+- [Jonathan Schwadron] - Added SSH Key generator recipe
 
 - - -
 
