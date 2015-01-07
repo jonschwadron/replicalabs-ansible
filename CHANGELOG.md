@@ -1,6 +1,7 @@
 replicalabs CHANGELOG
 =====================
 
+
 0.1.0
 -----
 - [Jonathan Schwadron] - Initial release of replicalabs cookbook
@@ -17,13 +18,15 @@ replicalabs CHANGELOG
 
 0.1.1
 -----
-- [Jonathan Schwadron] - Merged mutliple recipes from other cookbooks into one cookbook.
+- [Jonathan Schwadron] - Created setup.sh bash script to run Chef
 
-- [Jonathan Schwadron] - Added user SSH key instruction and user input prompt.
+- [Jonathan Schwadron] - Merged mutliple recipes from other cookbooks into one cookbook
 
-- [Jonathan Schwadron] - Removed old bash scripts.
+- [Jonathan Schwadron] - Added user SSH key instruction and user input prompt
 
-- [Jonathan Schwadron] - Added chef version validation.
+- [Jonathan Schwadron] - Removed old bash scripts
+
+- [Jonathan Schwadron] - Added chef version validation
 - - -
 
 
