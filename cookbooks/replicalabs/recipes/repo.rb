@@ -23,75 +23,74 @@ username = Etc.getlogin
     }.each do |other_repo|    
 
     git "#{SOURCE_DIRECTORY}/#{other_repo}" do
-        repository "git@bitbucket.org:replicalabs/#{other_repo}"
-        revision "master"
-        user "#{username}"
-        action :checkout
+      repository "git@bitbucket.org:replicalabs/#{other_repo}"
+      revision "master"
+      user "#{username}"
+      action :checkout
     end
 end
 
 =begin
-
 %w{
-	miniglog
-	GLConsole
-	SophusW
-	Pangolin
-	Calibu
-	HAL
-	SceneGraph
-	Node
-	Kangaroo
-	}.each do |repo|	
+  miniglog
+  GLConsole
+  SophusW
+  Pangolin
+  Calibu
+  HAL
+  SceneGraph
+  Node
+  Kangaroo
+  }.each do |repo|  
 
-		git "#{SOURCE_DIRECTORY}" do
-			repository "git@bitbucket.org:replicalabs/#{repo}"
-			revision "master"
-			action :sync
-		end
+    git "#{SOURCE_DIRECTORY}" do
+      repository "git@bitbucket.org:replicalabs/#{repo}"
+      revision "master"
+      action :sync
+    end
 
-		directory "#{SOURCE_DIRECTORY}/#{repo}/build" do
-			owner 'root'
-			group 'root'
-			mode 0755
-		end
+    directory "#{SOURCE_DIRECTORY}/#{repo}/build" do
+      owner 'root'
+      group 'root'
+      mode 0755
+    end
 
-		case repo
-		when "Sohpus"
-			bash 'Install Sophus' do
-	   	cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	   	code <<-EOH
-	   		make .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
-	   		make -j4 install
-	   	EOH
-	   end
+    case repo
+    when "Sohpus"
+      bash 'Install Sophus' do
+      cwd #{SOURCE_DIRECTORY}/#{repo}/build
+      code <<-EOH
+        make .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_TESTS=OFF
+        make -j4 install
+      EOH
+     end
 
-	 when "HAL"
-	 	bash 'Install HAL' do
-	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  	code <<-EOH
-	  		cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
-	  		make -j4 install
-	  	EOH
-	  end
+   when "HAL"
+    bash 'Install HAL' do
+      cwd #{SOURCE_DIRECTORY}/#{repo}/build
+      code <<-EOH
+        cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
+        make -j4 install
+      EOH
+    end
 
-	when "Kangaroo"
-		bash 'Install Kangaroo' do
-	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  	code <<-EOH
-	  		cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
-	  		make -j4 install
-	  	EOH
-	  end
+  when "Kangaroo"
+    bash 'Install Kangaroo' do
+      cwd #{SOURCE_DIRECTORY}/#{repo}/build
+      code <<-EOH
+        cmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install -DBUILD_APPLICATIONS=OFF
+        make -j4 install
+      EOH
+    end
 
-	else
-		bash 'Install' do
-	  	cwd #{SOURCE_DIRECTORY}/#{repo}/build
-	  	code <<-EOH
-	  		ccmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
-	  		make -j4 install
-	  	EOH
-	  end
-	end
+  else
+    bash 'Install' do
+      cwd #{SOURCE_DIRECTORY}/#{repo}/build
+      code <<-EOH
+        ccmake .. -DCMAKE_INSTALL_PREFIX=$SRC_DIR/install
+        make -j4 install
+      EOH
+    end
+  end
 end
 =end
