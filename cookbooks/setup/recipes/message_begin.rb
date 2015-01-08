@@ -47,7 +47,9 @@ def message_rendor
   line[3] = "\n", login_name, ": What you say?!\n"
   line[4] = "Rendor: I... uh..."
   line[5] = "Rendor: The setup will take approximately an hour to finish."
-  line[6] = "Rendor: Let's generate your SSH key."
+  line[6] = "Rendor: But first... let me take a selfie."
+  line[7] = "Rendor: I mean..."
+  line[8] = "Rendor: Let me generate your SSH key."
 
   fps = 30
   delay = 1.0/fps
