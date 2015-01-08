@@ -54,13 +54,14 @@ def message_rendor
   
   line = Hash.new
   line[1] = "Rendor: Please add your SSH Key to your bitbucket account"
-  line[2] = "Rendor: Copy the key shown above"
-  line[3] = "Rendor: Log in at bitbucket.com"
-  line[4] = "Rendor: Click the user icon (upper right corner)"
-  line[5] = "Rendor: Click Manage account"
-  line[6] = "Rendor: Click SSH keys"
-  line[7] = "Rendor: Click Add key" 
-  line[8] = "Rendor: Paste your public key"
+  line[2] = "Rendor: Copy the key given above by highlighting, right click and click copy"
+  line[3] = "Rendor: Do not use Ctrl+C to copy, it will halt the setup"
+  line[4] = "Rendor: Log in at bitbucket.com"
+  line[5] = "Rendor: Click the user icon (upper right corner)"
+  line[6] = "Rendor: Click Manage account"
+  line[7] = "Rendor: Click SSH keys"
+  line[8] = "Rendor: Click Add key" 
+  line[9] = "Rendor: Paste your public key"
 
   fps = 30
   delay = 1.0/fps
