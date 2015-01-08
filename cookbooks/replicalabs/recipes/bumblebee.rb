@@ -23,11 +23,11 @@ end
 =end
 
 %w{
-	bumblebee
-	bumblebee-nvidia
-	primus
-	primus-libs
-	}.each do |pkg|
+  bumblebee
+  bumblebee-nvidia
+  primus
+  primus-libs
+  }.each do |pkg|
   apt_package pkg do
     action :install
   end

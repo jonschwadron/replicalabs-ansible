@@ -53,14 +53,14 @@ def message_rendor
   login_name = Etc.getlogin
   
   line = Hash.new
-  line[1] = "Rendor: Please add your SSH Key to your bitbucket account."
+  line[1] = "Rendor: Please add your SSH Key to your bitbucket account"
   line[2] = "Rendor: Copy the key shown above"
   line[3] = "Rendor: Log in at bitbucket.com"
   line[4] = "Rendor: Click the user icon (upper right corner)"
   line[5] = "Rendor: Click Manage account"
   line[6] = "Rendor: Click SSH keys"
   line[7] = "Rendor: Click Add key" 
-  line[8] = "Rendor: Paste your public key."
+  line[8] = "Rendor: Paste your public key"
 
   fps = 30
   delay = 1.0/fps
@@ -70,12 +70,12 @@ def message_rendor
       print line[i][((j+=1)-2) % line[i].length]
       sleep delay
     end
-    sleep delay*25
+    sleep delay*20
     print "\n"
   end
 end
 
 message_rendor
 
-print "\nOnce you added your public key to your account, press enter to continue..."
+print "\nOnce you've added your public key to your account, press enter to continue..."
 STDIN.readline
