@@ -22,10 +22,9 @@ else
   printf "\nChefDK not found, installing...\n\n"
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
-  printf "\n\nChefDK installed!"
 fi
 
-printf "\nValidating ChefDK..."
+printf "\n\nValidating ChefDK..."
 CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
 
 if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
