@@ -13,11 +13,11 @@ require 'etc'
 include_recipe 'apt'
 
 =begin
-apt_repository 'nginx-php' do
+apt_repository 'bumblebee' do
   uri 'ppa:bumblebee/stable'
 end
 
-apt_repository 'nginx-php' do
+apt_repository 'ubuntu-x-swat' do
   uri 'ppa:ubuntu-x-swat/x-updates'
 end
 =end
