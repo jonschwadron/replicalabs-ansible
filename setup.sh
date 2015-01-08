@@ -16,13 +16,23 @@ BERKSFILE_SOURCE=${SCRIPT_DIR}/cookbooks/setup
 BERKSHELF_DIRECTORY=${SCRIPT_DIR}/berkshelf
 BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
 
-CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
-
-
-if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
-  printf "\nChef is outdated. Performing update...\n\n\n"
+if hash chef-client 2>/dev/null; then
+    printf "\nChefDK is currently installed. Validating ChefDK."
+else
+	echo "\nChefDK not found, installing..."
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
+fi
+
+CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
+
+if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
+  printf "\nChefDK is outdated. Performing update..."
+  wget ${CHEFDK_SOURCE}
+  sudo dpkg -i ${CHEFDK_FILE}
+  printf "\nChefDK is up to date!\n"
+else
+  printf "\nChefDK is up to date!\n"
 fi
 
 # create chef cookbook directory
