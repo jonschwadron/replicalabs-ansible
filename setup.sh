@@ -19,10 +19,10 @@ BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
 if hash chef-client 2>/dev/null; then
     printf "\nChefDK detected"
 else
-  printf "\nChefDK not found, installing..."
+  printf "\nChefDK not found, installing...\n\n"
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
-  printf "\nChefDK installed!"
+  printf "\n\nChefDK installed!"
 fi
 
 printf "\nValidating ChefDK..."
