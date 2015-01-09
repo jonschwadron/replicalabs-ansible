@@ -17,28 +17,27 @@ BERKSHELF_DIRECTORY=${SCRIPT_DIR}/berkshelf
 BERKSHELF_SETUP_DIRECTORY=${SCRIPT_DIR}/berkshelf/setup
 
 if hash chef-client 2>/dev/null; then
-    printf "\nChefDK detected"
+  echo -e "\nChefDK detected"
 else
-  printf "\nInstalling ChefDK...\n\n"
+  echo -e "\nInstalling ChefDK...\n"
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
 fi
 
-printf "\n\nValidating ChefDK..."
+echo -e "\nValidating ChefDK..."
 CHEF_CURRENT_VERSION="$( chef-client -v | perl -nE 'say /Chef: (.*)/')"
 
 if [ $CHEF_CURRENT_VERSION != $CHEF_VERSION ]; then
-  printf "\nChefDK is outdated. Performing update..."
+  echo -e "\nChefDK is outdated. Performing update..."
   wget ${CHEFDK_SOURCE}
   sudo dpkg -i ${CHEFDK_FILE}
-  printf "\nChefDK is up to date!\n\n"
 else
-  printf "\nChefDK is up to date!\n\n"
+  echo -e "ChefDK is up to date!\n"
 fi
 
 # create chef cookbook directory
 if [ ! -d $CHEF_CONFIG_DIRECTORY ]; then
-	mkdir ${CHEF_CONFIG_DIRECTORY}
+  mkdir ${CHEF_CONFIG_DIRECTORY}
 fi
 
 echo "cookbook_path ['${SCRIPT_DIR}/cookbooks', '${SCRIPT_DIR}/berkshelf']
