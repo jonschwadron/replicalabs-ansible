@@ -38,11 +38,7 @@ OTHER_PKG   = ['ant', 'autoconf', 'automake', 'build-essential', 'bzr',
   'openssh-server', 'protobuf-compiler', 'subversion', 'uuid-dev', 'valgrind',
   'xvfb']
 
-(FFMPEGS_PKG
-  + CERES_PKG
-  + PYTHON_PKG
-  + DB_PKG
-  + OTHER_PKG).each do |pkg|
+(FFMPEGS_PKG + CERES_PKG + PYTHON_PKG + DB_PKG + OTHER_PKG).each do |pkg|
   apt_package pkg do
     action :install
   end
