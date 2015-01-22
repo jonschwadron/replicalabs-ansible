@@ -1,1 +1,0 @@
-The setup cookbook will install the necessary dependencies via berkshelf.

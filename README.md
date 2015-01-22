@@ -1,14 +1,7 @@
-# Replica Labs Setup with Chef #
+# Replica Labs Setup with Ansible #
 
-Make sure the virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
+Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
-## Clone this repository into the chef-repo folder ##
-```
-git clone [https url] chef-repo
-```
-
-## Run setup.sh ##
-```
-cd chef-repo
-sudo bash setup.sh
-```
+## To-do: ##
+*  Create a script to install/configure ansible
+*  Convert Chef recipes into Ansible playbooks

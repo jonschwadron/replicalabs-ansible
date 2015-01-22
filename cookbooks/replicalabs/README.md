@@ -1,1 +1,0 @@
-The replicalabs cookbook installs the packages, repositories, and configurations.

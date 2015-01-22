@@ -29,6 +29,13 @@ replicalabs CHANGELOG
 - [Jonathan Schwadron] - Added chef version validation
 - - -
 
+0.2.0
+-----
+- [Jonathan Schwadron] - Migrate/Convert Chef to Ansible
+- - -
+
+
+
 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.
 
