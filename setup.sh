@@ -11,7 +11,4 @@ else
   sudo apt-get install -y ansible
 fi
 
-echo "[local]
-localhost ansible_connection=local" > /etc/ansible/hosts
-
-#sudo ansible-playbook -s package.yml
+sudo ansible-playbook -i hosts site.yml

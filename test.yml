@@ -1,5 +1,0 @@
----
-- hosts: local
-  tasks:
-    - name: Install an https repo
-      git: repo=https://jonschwadron@bitbucket.org/jonschwadron/replica_setup-chef.git dest=~/test_repo
