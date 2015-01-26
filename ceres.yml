@@ -1,6 +1,0 @@
----
-- hosts: local
-  tasks:
-    - name: Install ceres-solver
-      git: repo=https://ceres-solver.googlesource.com/ceres-solver dest=/srv/myapp
-      shell: "cmake .. -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON && make -j4 install"

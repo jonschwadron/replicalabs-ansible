@@ -1,0 +1,8 @@
+---
+- hosts: local
+  tasks:
+    - name: Install meshify-superbuild
+      git: repo=git@bitbucket.org:replicalabs/meshify-superbuild.git dest=~/meshify-superbuild
+
+    - name: Install rendor-android-superbuild
+      git: repo=git@bitbucket.org:replicalabs/rendor-android-superbuild.git dest=~/rendor-android-superbuild
