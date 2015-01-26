@@ -1,11 +1,13 @@
 # Replica Labs Setup with Ansible #
 
-In this current version, Ansible will only run the follow script:
+In this current version, Ansible will only run the following script:
+
 *  packages
 
 Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
 ## To-do: ##
+
 *  ssh
 *  repositories
 *  ceres-solver
