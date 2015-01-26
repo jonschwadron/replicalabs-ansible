@@ -32,6 +32,14 @@ replicalabs CHANGELOG
 0.2.0
 -----
 - [Jonathan Schwadron] - Migrate/Convert Chef to Ansible
+
+- [Jonathan Schwadron] - Setup file structure
+
+- [Jonathan Schwadron] - Created bash script to install/execute Ansible
+
+- [Jonathan Schwadron] - renamed host/playbook files.
+
+
 - - -
 
 

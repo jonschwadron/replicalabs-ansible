@@ -1,6 +1,6 @@
 ---
-  - name: Install FFMPEGS packages
-    apt: name={{ item }} state=installed
+  - name: install packages
+    apt: name={{ item }} state=present
     with_items:
       - libavcodec-dev
       - libavdevice-dev
@@ -9,31 +9,15 @@
       - libavutil-dev
       - libpostproc-dev
       - libswscale-dev
-
-  - name: Install CERES packages
-    apt: name={{ item }} state=installed
-    with_items:
       - libatlas-base-dev
       - libgflags-dev
       - libgoogle-glog-dev
       - libsuitesparse-dev
-
-  - name: Install PYTHON packages
-    apt: name={{ item }} state=installed
-    with_items:
       - pep8
       - pyflakes
       - python-pip
-
-  - name: Install DB packages
-    apt: name={{ item }} state=installed
-    with_items:
       - libmysqlclient-dev
       - mysql-common
-
-  - name: Install OTHER packages
-    apt: name={{ item }} state=installed
-    with_items:
       - ant
       - autoconf
       - automake
