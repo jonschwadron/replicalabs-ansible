@@ -2,5 +2,5 @@
   - hosts: local
     roles:
       - packages
-      #ssh
-      #repositories
+      - ssh
+      - repositories

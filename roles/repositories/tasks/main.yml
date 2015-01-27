@@ -1,0 +1,23 @@
+---
+  - name: clone meshify-superbuild
+    git: repo=git@bitbucket.org:replicalabs/meshify-superbuild.git dest={{ ansible_env.HOME }}/meshify-superbuild accept_hostkey=yes
+
+  - name: clone rendor-android-superbuild
+    git: repo=git@bitbucket.org:replicalabs/rendor-android-superbuild.git dest={{ ansible_env.HOME }}/rendor-android-superbuild accept_hostkey=yes
+
+  - name: clone ceres-solver
+    git: repo=https://ceres-solver.googlesource.com/ceres-solver dest={{ ansible_env.HOME }}/ceres-solver
+
+  - name: configure ceres-solver
+    sudo: true
+    command: cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '{{ ansible_env.HOME }}/ceres-solver/cmake_install.cmake'
+
+  - name: build & install ceres-solver
+    sudo: true
+    command: sudo make -j4 install
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '/usr/local/include/ceres/ceres.h'
