@@ -4,3 +4,15 @@
 
   - name: generate SSH key
     user: name="{{ ansible_ssh_user }}" generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
+
+  - name: Show SSH public key
+    command: cat ~/.ssh/id_rsa.pub
+    register: cat
+
+  - debug: var=cat.stdout_lines
+
+  - name: Copy SSH public key
+    pause: prompt="Add the SSH key above to your BitBucket account. Press enter to continue..."
+    register: pause
+
+  - debug: var=pause.stdout_lines
