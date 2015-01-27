@@ -14,5 +14,3 @@
   - name: Copy SSH public key
     pause: prompt="Add the SSH key above to your BitBucket account. Press enter to continue..."
     register: pause
-
-  - debug: var=pause.stdout_lines
