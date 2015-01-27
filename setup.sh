@@ -11,4 +11,12 @@ else
   sudo apt-get install -y ansible
 fi
 
+<<<<<<< Updated upstream
 ansible-playbook -u $USER -i local_inventory dev_playbook.yml
+=======
+<<<<<<< Updated upstream
+sudo ansible-playbook -u $USER -i local_inventory dev_playbook.yml
+=======
+ansible-playbook -u $USER -i local_inventory -K dev_playbook.yml
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
