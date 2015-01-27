@@ -11,4 +11,4 @@ else
   sudo apt-get install -y ansible
 fi
 
-sudo ansible-playbook -i local_inventory dev_playbook.yml
+sudo ansible-playbook -u $USER -i local_inventory dev_playbook.yml
