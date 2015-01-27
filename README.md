@@ -14,11 +14,11 @@ Make sure your virtual machine have at least 2 GB memory allocated, otherwise th
 
 ## To run the setup: ##
 ```
-git clone [https url] replicalabs
+git clone [https url] replica_setup
 ```
 
 ```
-cd replicalabs
+cd replica_setup
 ./setup.sh
 ```
 

@@ -8,14 +8,14 @@
   - name: clone ceres-solver
     git: repo=https://ceres-solver.googlesource.com/ceres-solver dest={{ ansible_env.HOME }}/ceres-solver
 
-  - name: build ceres-solver
+  - name: configure ceres-solver
     sudo: true
     command: cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON
     args:
       chdir: '{{ ansible_env.HOME }}/ceres-solver/'
       creates: '{{ ansible_env.HOME }}/ceres-solver/cmake_install.cmake'
 
-  - name: install ceres-solver
+  - name: build & install ceres-solver
     sudo: true
     command: sudo make -j4 install
     args:
