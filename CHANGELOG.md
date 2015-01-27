@@ -39,6 +39,10 @@ replicalabs CHANGELOG
 
 - [Jonathan Schwadron] - renamed host/playbook files.
 
+- [Jonathan Schwadron] - added SSH playbook.
+
+- [Jonathan Schwadron] - added repositories playbook.
+
 
 - - -
 
