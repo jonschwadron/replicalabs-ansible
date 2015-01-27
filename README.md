@@ -1,25 +1,25 @@
 # Replica Labs Setup with Ansible #
 
-In this current version, Ansible will only run the following script:
+In this current version, Ansible includes the following playbooks:
 
 *  packages
+*  ssh
+*  repositories
 
 Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
 
 ## To-do: ##
 
-*  ssh
-*  repositories
-*  ceres-solver
+*  bumblebee
 
 ## To run the setup: ##
 ```
-git clone [https url] replica_labs
+git clone [https url] replicalabs
 ```
 
 ```
-cd replica_labs
-sudo bash setup.sh
+cd replicalabs
+./setup.sh
 ```
 
 ## To run a single script ##
@@ -35,4 +35,10 @@ create a new file called test.yml in the same directory where the hosts file is.
 ```
 
 save the file and run the script:
-`sudo ansible-playbook -i hosts test.yml`
+`ansible-playbook -i hosts test.yml`
+
+-i inventory
+-k requests ssh password
+-K requests sudo password
+-s uses sudo mode
+-u username
