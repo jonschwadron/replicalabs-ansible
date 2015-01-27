@@ -1,12 +1,12 @@
 ---
   - name: create SSH directory
-    file: path=~/.ssh state=directory
+    file: path={{ ansible_env.HOME }}/.ssh state=directory
 
   - name: generate SSH key
     user: name="{{ ansible_ssh_user }}" generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
 
   - name: Show SSH public key
-    command: cat ~/.ssh/id_rsa.pub
+    command: cat {{ ansible_env.HOME }}/.ssh/id_rsa.pub
     register: cat
 
   - debug: var=cat.stdout_lines
