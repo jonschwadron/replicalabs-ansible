@@ -1,0 +1,9 @@
+---
+  - name: install meshify-superbuild
+    git: repo=git@bitbucket.org:replicalabs/meshify-superbuild.git dest=~/meshify-superbuild
+
+  - name: install rendor-android-superbuild
+    git: repo=git@bitbucket.org:replicalabs/rendor-android-superbuild.git dest=~/rendor-android-superbuild
+
+  - name: install ceres-solver
+    git: repo=https://ceres-solver.googlesource.com/ceres-solver dest=~/ceres-solver
