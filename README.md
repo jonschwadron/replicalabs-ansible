@@ -38,7 +38,11 @@ save the file and run the script:
 `ansible-playbook -i hosts test.yml`
 
 -i inventory
+
 -k requests ssh password
+
 -K requests sudo password
+
 -s uses sudo mode
+
 -u username
