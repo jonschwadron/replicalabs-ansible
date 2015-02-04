@@ -1,6 +1,7 @@
 ---
   - hosts: local
     roles:
-      - packages
-      - ssh
-      - repositories
+      - common
+      - cv_dev
+      - android_dev
+      - web_dev

@@ -1,0 +1,4 @@
+---
+#This role contains android stuff
+
+  - name: install android sdk

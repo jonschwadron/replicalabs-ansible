@@ -1,4 +1,22 @@
 ---
+#ssh
+  - name: create SSH directory
+    file: path={{ ansible_env.HOME }}/.ssh state=directory
+
+  - name: generate SSH key
+    user: name="{{ ansible_ssh_user }}" generate_ssh_key=yes ssh_key_bits=2048 ssh_key_file=.ssh/id_rsa
+
+  - name: Show SSH public key
+    command: cat {{ ansible_env.HOME }}/.ssh/id_rsa.pub
+    register: cat
+
+  - debug: var=cat.stdout_lines
+
+  - name: Copy SSH public key
+    pause: prompt="Add the SSH key above to your BitBucket account. Press enter to continue..."
+    register: pause
+
+#packages
   - name: install packages
     sudo: true
     apt: name={{ item }} state=present
@@ -95,3 +113,27 @@
       - uuid-dev
       - valgrind
       - xvfb
+
+#repositories
+  - name: clone meshify-superbuild
+    git: repo=git@bitbucket.org:replicalabs/meshify-superbuild.git dest={{ ansible_env.HOME }}/meshify-superbuild accept_hostkey=yes
+
+  - name: clone rendor-android-superbuild
+    git: repo=git@bitbucket.org:replicalabs/rendor-android-superbuild.git dest={{ ansible_env.HOME }}/rendor-android-superbuild accept_hostkey=yes
+
+  - name: clone ceres-solver
+    git: repo=https://ceres-solver.googlesource.com/ceres-solver dest={{ ansible_env.HOME }}/ceres-solver
+
+  - name: configure ceres-solver
+    sudo: true
+    command: cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '{{ ansible_env.HOME }}/ceres-solver/cmake_install.cmake'
+
+  - name: build & install ceres-solver
+    sudo: true
+    command: sudo make -j4 install
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '/usr/local/include/ceres/ceres.h'
