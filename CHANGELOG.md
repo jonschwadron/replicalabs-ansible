@@ -42,11 +42,13 @@ replicalabs CHANGELOG
 - [Jonathan Schwadron] - added SSH playbook.
 
 - [Jonathan Schwadron] - added repositories playbook.
-
-
 - - -
 
+0.2.1
+-----
+- [Jonathan Schwadron] - Regrouped directory structure to specific job roles
 
+- - -
 
 
 Check the [Markdown Syntax Guide](http://daringfireball.net/projects/markdown/syntax) for help with Markdown.

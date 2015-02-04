@@ -2,6 +2,6 @@
   - hosts: local
     roles:
       - common
-      - cv_dev
-      - android_dev
-      - web_dev
+      - computer_vision
+      - android
+      - web
