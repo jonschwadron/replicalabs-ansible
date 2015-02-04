@@ -1,4 +1,6 @@
 ---
 #This role contains android stuff
 
-  - name: install android sdk
+#repositories
+  - name: clone rendor-android-superbuild
+    git: repo=git@bitbucket.org:replicalabs/rendor-android-superbuild.git dest={{ ansible_env.HOME }}/rendor-android-superbuild accept_hostkey=yes
