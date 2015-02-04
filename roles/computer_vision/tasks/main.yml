@@ -1,4 +1,7 @@
 ---
+#This role contains computer vision stuff
+
+#packages
   - name: install packages
     sudo: true
     apt: name={{ item }} state=present
@@ -18,7 +21,6 @@
       - pyflakes
       - python-pip
       - libmysqlclient-dev
-      - mysql-common
       - ant
       - autoconf
       - automake
@@ -30,10 +32,7 @@
       - cmake-curses-gui
       - cppcheck
       - cppcheck
-      - default-jdk
       - doxygen
-      - emacs24
-      - findbugs
       - freeglut3
       - freeglut3-dev
       - g++
@@ -42,16 +41,8 @@
       - gcc
       - gcc-4.6
       - gcc-4.8
-      - git
-      - git-core
-      - git-gui
-      - git-svn
-      - gitk
       - glew-utils
-      - gnome-session-flashback
-      - gnome-tweak-tool
       - graphviz
-      - htop
       - lcov
       - libavahi-client-dev
       - libavahi-compat-libdnssd-dev
@@ -81,17 +72,33 @@
       - libxi-dev
       - libxmu-dev
       - libzmq3-dev
-      - linux-headers-generic
-      - linux-image-generic
-      - linux-source
       - mercurial
       - meshlab
       - nvidia-profiler
       - nvidia-visual-profiler
-      - openssh-client
-      - openssh-server
       - protobuf-compiler
       - subversion
       - uuid-dev
       - valgrind
       - xvfb
+
+#repositories
+  - name: clone meshify-superbuild
+    git: repo=git@bitbucket.org:replicalabs/meshify-superbuild.git dest={{ ansible_env.HOME }}/meshify-superbuild accept_hostkey=yes
+
+  - name: clone ceres-solver
+    git: repo=https://ceres-solver.googlesource.com/ceres-solver dest={{ ansible_env.HOME }}/ceres-solver
+
+  - name: configure ceres-solver
+    sudo: true
+    command: cmake -DCMAKE_BUILD_TYPE=Release -DBUILD_SHARED_LIBS:BOOL=ON
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '{{ ansible_env.HOME }}/ceres-solver/cmake_install.cmake'
+
+  - name: build & install ceres-solver
+    sudo: true
+    command: sudo make -j4 install
+    args:
+      chdir: '{{ ansible_env.HOME }}/ceres-solver/'
+      creates: '/usr/local/include/ceres/ceres.h'

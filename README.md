@@ -1,16 +1,13 @@
 # Replica Labs Setup with Ansible #
 
-In this current version, Ansible includes the following playbooks:
+In this current version, Ansible includes these playbooks:
 
-*  packages
-*  ssh
-*  repositories
+*  common
+*  computer_vision
+*  android
+*  web
 
 Make sure your virtual machine have at least 2 GB memory allocated, otherwise the setup will fail.  
-
-## To-do: ##
-
-*  bumblebee
 
 ## To run the setup: ##
 ```

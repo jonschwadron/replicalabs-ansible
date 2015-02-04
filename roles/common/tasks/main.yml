@@ -1,4 +1,5 @@
 ---
+#ssh
   - name: create SSH directory
     file: path={{ ansible_env.HOME }}/.ssh state=directory
 
@@ -14,3 +15,26 @@
   - name: Copy SSH public key
     pause: prompt="Add the SSH key above to your BitBucket account. Press enter to continue..."
     register: pause
+
+#packages
+  - name: install packages
+    sudo: true
+    apt: name={{ item }} state=present
+    with_items:
+      - mysql-common
+      - default-jdk
+      - emacs24
+      - findbugs
+      - git
+      - git-core
+      - git-gui
+      - git-svn
+      - gitk
+      - gnome-session-flashback
+      - gnome-tweak-tool
+      - htop
+      - linux-headers-generic
+      - linux-image-generic
+      - linux-source
+      - openssh-client
+      - openssh-server

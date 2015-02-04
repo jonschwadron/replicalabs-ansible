@@ -1,6 +1,7 @@
 ---
   - hosts: local
     roles:
-      - packages
-      - ssh
-      - repositories
+      - common
+      - computer_vision
+      - android
+      - web
