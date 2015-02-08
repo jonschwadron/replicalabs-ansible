@@ -3,4 +3,4 @@
 
 #repositories
   - name: clone rendor-android
-    git: repo=git@bitbucket.org:replicalabs/rendor-android.git dest={{ ansible_env.HOME }}/rendor-android-superbuild accept_hostkey=yes
+    git: repo=git@bitbucket.org:replicalabs/rendor-android.git dest={{ ansible_env.HOME }}/rendor-android accept_hostkey=yes
