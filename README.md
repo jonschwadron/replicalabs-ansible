@@ -43,3 +43,6 @@ save the file and run the script:
 -s uses sudo mode
 
 -u username
+
+## Documentation ##
+[Replica Labs: Ansible Documentation](https://goo.gl/i5lQvZ)
