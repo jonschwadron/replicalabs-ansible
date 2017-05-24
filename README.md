@@ -11,7 +11,7 @@ Make sure your virtual machine have at least 2 GB memory allocated, otherwise th
 
 ## To run the setup: ##
 ```
-git clone https://bitbucket.org/replicalabs/replica_setup
+git clone https://github.com/jonschwadron/replicalabs-ansible
 ```
 
 ```
